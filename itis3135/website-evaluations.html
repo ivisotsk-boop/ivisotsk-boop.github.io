@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <title>Website Evaluations</title>
+    <style>
+        body {
+            text-align: center;
+            font-family:'Courier New', Courier, monospace;
+            color: rgb(77, 62, 188);
+            background-color: rgba(211, 207, 212, 0.214);
+            display: flex;
+            flex-direction: column;
+            min-height: 97vh;
+
+        }
+
+        main {
+            flex: 1;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        h3 {
+            text-align: center;
+        }
+        ul {
+            text-align: left;
+            max-width: 700px;
+            list-style-type: none;
+        }
+        a {
+            color: rgb(215, 48, 95);
+            text-decoration: none;
+        }
+        a:hover{
+            color: red;
+        }
+        .description{
+            margin-top: -10px;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div data-include="components/header.html"></div>
+    </header>
+    <main>
+        <h2>Website Evaluations</h2>
+        <div class="container">
+            <section id="red-ventures">
+                <h3><a href="https://www.redventures.com/" target="_blank">Red Ventures</a></h3>
+                <p class="description">This website belongs to a large web-development company called Red Ventures</p>
+                <ul>
+                    <li>
+                        <p>Contrast: Website uses good contrast. There are multiple colors
+                            and even animation that are easy to read.</p>
+                    </li>
+                    <li>
+                        <p>Repetition: Website uses similar size fonts and bold styles 
+                            for similar sections. Similar theme colors used throughout the page.</p>
+                    </li>
+                    <li>
+                        <p>Alignment: Small explanatory widgets are aligned with text on one side and
+                            an animation on the other. These animations/text segments alternate sides
+                            but keep a clean look.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Proximity: Spaces between different segments and borders from the edge
+                            of the screen to the text make this website easy to read. Text is large enough
+                            that only one segment of text is focused on the screen at a time.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section id="berkshire">
+                <h3><a href="https://www.berkshirehathaway.com/" target="_blank">Berkshire Hathaway</a></h3>
+                <p class="description">This website belongs to a conglamorate company owned by Warren Buffet</p>
+                <ul>
+                    <li>
+                        <p>Contrast: Text is readable but better colors could be used. Default
+                            purple color on links does not look good.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Repetition: Very simple page not much room for repetition but there is a bulleted
+                            list that uses the same style for each element. Same style colors used throughout the page.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Alignment: Borders are inconsistent on the page forcing the user to jump from left to right to center.
+                            Bulleted list consists of two columns with too much whitespace.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Proximity: Proximity is not too bad. Less borders could be used in-between sections or more space between 
+                            borders and text.</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div data-include="components/header.html"></div>
+    </footer>
+    <script src="scripts/HTMLInclude.min.js"></script>
+</body>
+</html>

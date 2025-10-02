@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <title>Ivan Visotsky's Webpage</title>
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+        body {
+            font-family: Arial, sans-serif; 
+            background-color: #252525;     
+            color: #aaa9a9;       
+            width: 80%;          
+            line-height: 1.6;
+            margin: auto;
+            max-width: 700;
+            flex: 1;
+        }
+
+        header {
+            text-align: center;
+            margin: 10px 30px 30px 30px;   
+        }
+
+        h1 {
+            font-family: Georgia, serif;  
+            font-size: 2.5em;
+            color: #7caaff;
+            margin: 0;
+        }
+
+        h2 {
+            color: #7caaff;        
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;        
+            font-size: 16px;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        figure {
+            text-align: center;
+            font-size: 10px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #acc9ff;
+            flex: 2;    
+        }
+
+        a {
+            color: #acc9ff;
+            text-decoration: none;
+            padding: 8px;
+        }
+
+        a:hover{
+            color: #252525;
+            cursor: pointer;
+            background-color: #aaa9a9;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div data-include="components/header.html"></div>
+    </header>
+    <main>
+        <figure>
+            <img src="images/me-and-girlfriend.jpg" alt="Katya and I at the wedding"  width="200">
+            <figcaption>
+                <em>My future wife and I celebrating a friends wedding</em>
+            </figcaption>
+        </figure>
+        <p>My name is Ivan Visotsky and I am a junior undergraduate student at the University of North Carolina at Charlotte.
+            This is my personal home page that I created as part of the ITIS-3135 course better known as Front End Web App Development.
+        </p>
+        <p>I was born in Michigan to a family of immigrants from Estonia. I learned Russian as my first language and was raised
+            with Russian traditions. My family decided to move to Charlotte in 2013 due to the large Russian speaking population and better
+            opportunities. The first time I showed interest in computers was when I would take apart old motherboards from PCs and pull all of 
+            the tiny pieces apart. I would wonder what all of the tiny capacitors and circuits were 
+            meant to do. Then, after years of not pursuing this interest I started learning about cyber security at
+            the Central Academy of Technology and Arts in Monroe, NC. This was where I realized that I would work in the IT industry.
+            Now I am studying Computer Science at UNCC and am excited to learn as much as I can about programming and software development.
+        </p>
+    </main>
+
+    <footer>
+        <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="scripts/HTMLInclude.min.js"></script>
+</body>
+</html>
