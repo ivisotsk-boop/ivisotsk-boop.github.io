@@ -6,6 +6,11 @@
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <title>itis3135 homepage</title>
     <style>
+        main {
+            text-align: center;
+            display: flex;
+        }
+
         body {
             font-family: Arial, sans-serif; 
             background-color: #252525;     
@@ -14,11 +19,14 @@
             line-height: 1.6;
             margin: auto;
             max-width: 700;
+            flex: 1;
         }
 
         header {
-            text-align: center;
             margin: 10px 30px 30px 30px;   
+            display: flex;
+            flex-direction: row;
+            gap: 20ox;
         }
 
         h1 {
@@ -31,13 +39,11 @@
         h2 {
             color: #7caaff;        
             margin-bottom: 15px;
-            text-align: center;
         }
 
         p {
             margin-bottom: 20px;        
             font-size: 16px;
-            text-align: center;
         }
 
         img {
@@ -46,15 +52,15 @@
         }
 
         figure {
-            text-align: center;
             font-size: 10px;
         }
 
         footer {
-            text-align: center;
             margin-top: 40px;
             font-size: 14px;
             color: #acc9ff;
+            position: absolute;
+            bottom: 0;
         }
 
         a {

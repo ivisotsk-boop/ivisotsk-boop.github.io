@@ -21,10 +21,14 @@
         
         main {
             flex: 1;
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            margin: 0 auto;
+
         }
 
         header {
-            text-align: center;
             margin: 30px;   
         }
 
@@ -38,7 +42,6 @@
         h2 {
             color: #7caaff;        
             margin-bottom: 15px;
-            text-align: center;
         }
 
         p {
@@ -48,12 +51,10 @@
 
         .intro {
             margin: auto;
-            text-align: center;
         }
 
         footer {
             bottom: 0;
-            text-align: center;
             font-size: 14px;
             color: #acc9ff;
 
@@ -75,7 +76,7 @@
 </head>
 <body>
     <header>
-        <h1>Ivan Visotsky | Invincible Vulture</h1>
+        <div data-include="components/header.html"></div>
     </header>
     <main>
         <hr>
@@ -108,6 +109,6 @@
     <footer>
         <div data-include="components/footer.html"></div>
     </footer>
-    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="itis3135/scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
