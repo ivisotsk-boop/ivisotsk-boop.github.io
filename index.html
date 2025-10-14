@@ -4,32 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-    <title>Home Page</title>
+    <title>Ivan Visotsky</title>
     <style>
         body {
             font-family: Arial, sans-serif; 
             background-color: #252525;     
             color: #aaa9a9;       
-            width: 80%;          
             line-height: 1.6;
-            margin: auto;
-            max-width: 700;
-            display: flex;
-            flex-direction: column;
             min-height: 97vh;
         }
         
-        main {
-            flex: 1;
-            max-width: 800px;
+        header, main, footer {
+            max-width: 1200px;
             width: 90%;
-            text-align: center;
             margin: 0 auto;
-
+            text-align: center;
+        }
+        main {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 1200px;
+            width: 70%;
         }
 
         header {
-            margin: 30px;   
+            margin: 20px auto;
         }
 
         h1 {
@@ -42,6 +41,7 @@
         h2 {
             color: #7caaff;        
             margin-bottom: 15px;
+            text-align: center;
         }
 
         p {
@@ -54,10 +54,9 @@
         }
 
         footer {
-            bottom: 0;
+            margin-top: 50px;
             font-size: 14px;
             color: #acc9ff;
-
         }
 
         a {
@@ -71,6 +70,21 @@
             cursor: pointer;
             background-color: #aaa9a9;
             border-radius: 10%;
+        }
+        @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
+            #colorbox {
+                background-color:#252525;
+            }
+        }
+        @media screen and ( min-width: 601px ) and ( max-width: 980px )  {
+            #colorbox {
+                background-color:#252525;
+            }
+        }
+        @media screen and ( min-width: 370px ) and ( max-width: 600px ) {
+            #colorbox {
+                background-color:#252525;
+            }
         }
     </style>
 </head>
@@ -109,6 +123,6 @@
     <footer>
         <div data-include="components/footer.html"></div>
     </footer>
-    <script src="itis3135/scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
