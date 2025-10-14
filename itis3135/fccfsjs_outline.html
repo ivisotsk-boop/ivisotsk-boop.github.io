@@ -1,142 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
     <title>FCC Agreement</title>
+    <link rel="stylesheet" href="styles/default.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif; 
-            background-color: #252525;     
-            color: #aaa9a9;       
-            width: 70%;          
-            line-height: 1.6;
-            margin: auto;
-            max-width: 700;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        main {
-            flex: 1;
-            margin: 0 auto;
-            max-width: 1200px;
-            width: 90%;
-        }
-
-        header {
-            margin: 10px 30px 10px 30px; 
-        }
-        .top-nav {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            justify-content: center;
-        }   
-
-        h1 {
-            font-family: Georgia, serif;  
-            font-size: 2.5em;
-            color: #7caaff;
-            margin: 0;
-        }
-
-        h2 {
-            color: #7caaff;        
-            margin: 10px;
-        }
-
-        p {
-            margin-bottom: 20px;        
-            font-size: 16px;
-        }
-        fieldset {
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        footer {
-            flex: 2;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #acc9ff;
-        }
-
-        a {
-            color: #acc9ff;
-            text-decoration: none;
-            padding: 8px;
-        }
-
-        a:hover{
-            color: #252525;
-            cursor: pointer;
-            background-color: #aaa9a9;
-            border-radius: 10%;
-        }
-        td, th {
-            font-size: .9em;
-            border: solid #1d1d1d;
-        }
-        table {
-            border-collapse: collapse;
-            text-align: left;
-            width: 120%;
-            justify-content: center;
-            margin: 0 auto;
-            transform: translateX(-9%);
-        }
-        th {
-            text-align: center;
-        }
-        th:nth-child(1):not(.empty), td:nth-child(1), th:nth-child(3), td:nth-child(3), th:nth-child(5), td:nth-child(5), th:nth-child(7), td:nth-child(7) {
-            background-color: #4e4e4e63;
-        }
-        .empty {
-            border-top: solid transparent;
-            border-left: solid transparent;
-        }
-        ol {
-            list-style-type: none;
-            margin: 0;
-            padding: 0 0 0 10px;
-        }
-        ul {
-            margin-left: -10px;
-        }
-        @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
-            #colorbox {
-                background-color:#252525;
-            }
-        }
-        @media screen and ( min-width: 601px ) and ( max-width: 980px )  {
-            #colorbox {
-                background-color:#252525;
-            }
-        }
-        @media screen and ( min-width: 370px ) and ( max-width: 600px ) {
-            #colorbox {
-                background-color:#252525;
-            }
-        }
+      td,
+      th {
+        font-size: 0.9em;
+        border: solid #1d1d1d;
+      }
+      table {
+        border-collapse: collapse;
+        text-align: left;
+        width: 120%;
+        justify-content: center;
+        margin: 0 auto;
+        transform: translateX(-9%);
+      }
+      th {
+        text-align: center;
+      }
+      th:nth-child(1):not(.empty),
+      td:nth-child(1),
+      th:nth-child(3),
+      td:nth-child(3),
+      th:nth-child(5),
+      td:nth-child(5),
+      th:nth-child(7),
+      td:nth-child(7) {
+        background-color: #4e4e4e63;
+      }
+      .empty {
+        border-top: solid transparent;
+        border-left: solid transparent;
+      }
+      ol {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 0 0 10px;
+      }
+      ul {
+        margin-left: -10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div data-include="components/header.html"></div>
+      <div data-include="components/header.html"></div>
     </header>
     <main>
-        <hr>
-        <h2>JavaScript Agreement</h2>
-        <p>I, Ivan Visotsky, intent to finish the freeCodeCamp Full Stack Developer 
-            JavaScript section over the next 6 weeks according to the following general schedule</p>
+      <h2>JavaScript Agreement</h2>
+      <p>
+        I, Ivan Visotsky, intent to finish the freeCodeCamp Full Stack Developer
+        JavaScript section over the next 6 weeks according to the following
+        general schedule
+      </p>
 
-        <table>
-    <thead>
-        <tr>
+      <table>
+        <thead>
+          <tr>
             <th class="empty"></th>
             <th>Week 1 10/6 - 10/12</th>
             <th>Week 2 10/13 - 10/19</th>
@@ -144,61 +72,61 @@
             <th>Week 4 10/27 - 11/2</th>
             <th>Week 5 11/3 - 11/9</th>
             <th>Week 6 11/10 - 11/16</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
             <th>Sections</th>
             <td>
-                <ol>
-                    <li>Code Editors</li>
-                    <li>Variables and Strings</li>
-                    <li>Booleans and Numbers</li>
-                    <li>Functions</li>
-                </ol>
+              <ol>
+                <li>Code Editors</li>
+                <li>Variables and Strings</li>
+                <li>Booleans and Numbers</li>
+                <li>Functions</li>
+              </ol>
             </td>
             <td>
-                <ol>
-                    <li>Arrays</li>
-                    <li>Objects</li>
-                    <li>Loops</li>
-                    <li>JavaScript Fundamentals Review</li>
-                </ol>
+              <ol>
+                <li>Arrays</li>
+                <li>Objects</li>
+                <li>Loops</li>
+                <li>JavaScript Fundamentals Review</li>
+              </ol>
             </td>
             <td>
-                <ol>
-                    <li>Higher Order Functions and Callbacks</li>
-                    <li>DOM Manipulation and Events</li>
-                    <li>JavaScript and Accessibility</li>
-                </ol>
+              <ol>
+                <li>Higher Order Functions and Callbacks</li>
+                <li>DOM Manipulation and Events</li>
+                <li>JavaScript and Accessibility</li>
+              </ol>
             </td>
             <td>
-                <ol>
-                    <li>Debugging</li>
-                    <li>Basic Regex</li>
-                    <li>Form Validation</li>
-                </ol>
+              <ol>
+                <li>Debugging</li>
+                <li>Basic Regex</li>
+                <li>Form Validation</li>
+              </ol>
             </td>
             <td>
-                <ol>
-                    <li>Dates</li>
-                    <li>Audio and Video Events</li>
-                    <li>Maps and Sets</li>
-                    <li>LocalStorage and CRUD Operations</li>
-                </ol>
+              <ol>
+                <li>Dates</li>
+                <li>Audio and Video Events</li>
+                <li>Maps and Sets</li>
+                <li>LocalStorage and CRUD Operations</li>
+              </ol>
             </td>
             <td>
-                <ol>
-                    <li>Classes</li>
-                    <li>Recursion</li>
-                    <li>Functional Programming</li>
-                    <li>Asynchronous JavaScript</li>
-                    <li>JavaScript Review</li>
-                </ol>
+              <ol>
+                <li>Classes</li>
+                <li>Recursion</li>
+                <li>Functional Programming</li>
+                <li>Asynchronous JavaScript</li>
+                <li>JavaScript Review</li>
+              </ol>
             </td>
-        </tr>
+          </tr>
 
-        <tr>
+          <tr>
             <th>Steps</th>
             <td>142 steps</td>
             <td>115 steps</td>
@@ -206,76 +134,77 @@
             <td>158 steps</td>
             <td>175 steps</td>
             <td>269 steps</td>
-        </tr>
+          </tr>
 
-        <tr>
+          <tr>
             <th>Contents</th>
             <td>
-                <ul>
-                    <li>theory: 12</li>
-                    <li>workshop: 3</li>
-                    <li>lab: 10</li>
-                    <li>review: 3</li>
-                    <li>quiz: 3</li>
-                </ul>
+              <ul>
+                <li>theory: 12</li>
+                <li>workshop: 3</li>
+                <li>lab: 10</li>
+                <li>review: 3</li>
+                <li>quiz: 3</li>
+              </ul>
             </td>
             <td>
-                <ul>
-                    <li>theory: 10</li>
-                    <li>workshop: 3</li>
-                    <li>lab: 28</li>
-                    <li>review: 3</li>
-                    <li>quiz: 3</li>
-                </ul>
+              <ul>
+                <li>theory: 10</li>
+                <li>workshop: 3</li>
+                <li>lab: 28</li>
+                <li>review: 3</li>
+                <li>quiz: 3</li>
+              </ul>
             </td>
             <td>
-                <ul>
-                    <li>theory: 4</li>
-                    <li>workshop: 5</li>
-                    <li>lab: 14</li>
-                    <li>review: 3</li>
-                    <li>quiz: 3</li>
-                </ul>
+              <ul>
+                <li>theory: 4</li>
+                <li>workshop: 5</li>
+                <li>lab: 14</li>
+                <li>review: 3</li>
+                <li>quiz: 3</li>
+              </ul>
             </td>
             <td>
-                <ul>
-                    <li>theory: 3</li>
-                    <li>workshop: 2</li>
-                    <li>lab: 8</li>
-                    <li>review: 3</li>
-                    <li>quiz: 3</li>
-                </ul>
+              <ul>
+                <li>theory: 3</li>
+                <li>workshop: 2</li>
+                <li>lab: 8</li>
+                <li>review: 3</li>
+                <li>quiz: 3</li>
+              </ul>
             </td>
             <td>
-                <ul>
-                    <li>theory: 4</li>
-                    <li>workshop: 3</li>
-                    <li>lab: 4</li>
-                    <li>review: 4</li>
-                    <li>quiz: 4</li>
-                </ul>
+              <ul>
+                <li>theory: 4</li>
+                <li>workshop: 3</li>
+                <li>lab: 4</li>
+                <li>review: 4</li>
+                <li>quiz: 4</li>
+              </ul>
             </td>
             <td>
-                <ul>
-                    <li>theory: 4</li>
-                    <li>workshop: 4</li>
-                    <li>lab: 6</li>
-                    <li>review: 5</li>
-                    <li>quiz: 4</li>
-                </ul>
+              <ul>
+                <li>theory: 4</li>
+                <li>workshop: 4</li>
+                <li>lab: 6</li>
+                <li>review: 5</li>
+                <li>quiz: 4</li>
+              </ul>
             </td>
-        </tr>
-    </tbody>
-</table>
-        <p>I acknowledge that this is a single assignment within the course and not broken out into parts
-            like the previous certification and will take responsibility for pacing myself
-        </p>
-        <p>Ivan Visotsky, October 4, 2025</p>
-        <hr>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        I acknowledge that this is a single assignment within the course and not
+        broken out into parts like the previous certification and will take
+        responsibility for pacing myself
+      </p>
+      <p>Ivan Visotsky, October 4, 2025</p>
     </main>
     <footer>
-        <div data-include="components/footer.html"></div>
+      <div data-include="components/footer.html"></div>
     </footer>
     <script src="scripts/HTMLInclude.min.js"></script>
-</body>
+  </body>
 </html>

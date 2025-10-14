@@ -1,125 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
     <title>itis3135 homepage</title>
-    <style>
-        main {
-            margin: 0 auto;
-            max-width: 1200px;
-            width: 90%;
-        }
-        
-        body {
-            font-family: Arial, sans-serif; 
-            background-color: #252525;     
-            color: #aaa9a9;       
-            width: 80%;          
-            line-height: 1.6;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        header {
-            margin: 30px;   
-        }
-
-        .top-nav {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            justify-content: center;
-        }   
-
-        h1 {
-            font-family: Georgia, serif;  
-            font-size: 2.5em;
-            color: #7caaff;
-            margin: 0;
-        }
-
-        h2 {
-            color: #7caaff;        
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 2em;
-        }
-        fieldset {
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        p {
-            margin-bottom: 20px;        
-            font-size: 16px;
-        }
-
-        img {
-            display: block;
-            margin: 0 auto;
-        }
-
-        .welcome {
-            font-size: 1.3em;
-            margin-bottom: 40vh;
-        }
-        footer {
-            font-size: 14px;
-            color: #acc9ff;
-        }
-
-        a {
-            color: #acc9ff;
-            text-decoration: none;
-            padding: 8px;
-        }
-
-        a:hover{
-            color: #252525;
-            cursor: pointer;
-            background-color: #aaa9a9;
-            border-radius: 10%;
-        }
-
-        .top-nav {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            justify-content: center;
-        }
-        @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
-            #colorbox {
-                background-color:#252525;
-            }
-        }
-        @media screen and ( min-width: 601px ) and ( max-width: 980px )  {
-            #colorbox {
-                background-color:#252525;
-            }
-        }
-        @media screen and ( min-width: 370px ) and ( max-width: 600px ) {
-            #colorbox {
-                background-color:#252525;
-            }
-        }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="styles/default.css" />
+  </head>
+  <body>
     <header>
-        <div data-include="components/header.html"></div>
+      <div data-include="components/header.html"></div>
     </header>
-    
+
     <main>
-        <hr>
-        <h2>Home Page</h2>
-        <p class="welcome">Welcome to my ITIS-3135 home page</p>
-        <hr>
+      <h2>Home Page</h2>
+      <p class="welcome">Welcome to my ITIS-3135 home page</p>
     </main>
     <footer>
-        <div data-include="components/footer.html"></div>
+      <div data-include="components/footer.html"></div>
     </footer>
     <script src="scripts/HTMLInclude.min.js"></script>
-</body>
+  </body>
 </html>
