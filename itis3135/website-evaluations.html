@@ -14,12 +14,24 @@
             display: flex;
             flex-direction: column;
             min-height: 97vh;
-
         }
 
         main {
             flex: 1;
+            margin: 0 auto;
+            width: 90%;
+            max-width: 1200px;
         }
+        header {
+            margin: 0 auto 1em auto;
+        }
+        .top-nav {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: center;
+        }   
+
         .container {
             display: flex;
             flex-direction: row;
@@ -44,7 +56,25 @@
             margin-top: -10px;
             font-size: 14px;
         }
-
+        fieldset {
+            width: 50%;
+            margin: 0 auto;
+        }
+        @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
+            #colorbox {
+                background-color:rgba(211, 207, 212, 0.214);
+            }
+        }
+        @media screen and ( min-width: 601px ) and ( max-width: 980px )  {
+            #colorbox {
+                background-color:rgba(211, 207, 212, 0.214);
+            }
+        }
+        @media screen and ( min-width: 370px ) and ( max-width: 600px ) {
+            #colorbox {
+                background-color:rgba(211, 207, 212, 0.214);
+            }
+        }
     </style>
 </head>
 <body>
@@ -52,6 +82,7 @@
         <div data-include="components/header.html"></div>
     </header>
     <main>
+        <hr>    
         <h2>Website Evaluations</h2>
         <div class="container">
             <section id="red-ventures">
@@ -106,9 +137,10 @@
                 </ul>
             </section>
         </div>
+        <hr style="margin-top: 30px;">
     </main>
     <footer>
-        <div data-include="components/header.html"></div>
+        <div data-include="components/footer.html"></div>
     </footer>
     <script src="scripts/HTMLInclude.min.js"></script>
 </body>

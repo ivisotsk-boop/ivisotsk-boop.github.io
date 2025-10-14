@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-    <title>Ivan Visotsky's Webpage</title>
+    <title>Introduction</title>
     <style>
         main {
             display: flex;
             flex-direction: column;
+            margin: 0 auto;
+            max-width: 1200px;
+            width: 90%;
         }
         body {
             font-family: Arial, sans-serif; 
@@ -17,14 +20,20 @@
             width: 80%;          
             line-height: 1.6;
             margin: auto;
-            max-width: 700;
             flex: 1;
+            text-align: center;
         }
 
         header {
-            text-align: center;
             margin: 10px 30px 30px 30px;   
         }
+        .top-nav {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: center;
+        }   
+
 
         h1 {
             font-family: Georgia, serif;  
@@ -35,23 +44,22 @@
 
         h2 {
             color: #7caaff;        
-            margin-bottom: 15px;
-            text-align: center;
+            margin: 5px;
         }
 
         p {
+            
             margin-bottom: 20px;        
             font-size: 16px;
-            text-align: center;
         }
-
-        img {
-            display: block;
-            margin: 0 auto;
+        .paragraph {
+            width: 70%;
+            margin: 0 auto 1em auto;
+            text-indent: 2.3em;
+            text-align: left;
         }
 
         figure {
-            text-align: center;
             font-size: 10px;
         }
 
@@ -59,13 +67,18 @@
             text-align: center;
             font-size: 14px;
             color: #acc9ff;
-            flex: 2;    
+            flex: 2;   
+            margin: 0 auto;
         }
 
         a {
             color: #acc9ff;
             text-decoration: none;
             padding: 8px;
+        }
+        fieldset {
+            width: 50%;
+            margin: 0 auto;
         }
 
         a:hover{
@@ -74,25 +87,42 @@
             background-color: #aaa9a9;
             border-radius: 10%;
         }
+        @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
+            #colorbox {
+                background-color:#252525;
+            }
+        }
+        @media screen and ( min-width: 601px ) and ( max-width: 980px )  {
+            #colorbox {
+                background-color:#252525;
+            }
+        }
+        @media screen and ( min-width: 370px ) and ( max-width: 600px ) {
+            #colorbox {
+                background-color:#252525;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div data-include="components/header.html"></div>
+        <hr style="margin-top: 20px; margin-bottom: -20px;">
     </header>
     <main>
+        <h2>Introduction</h2>
         <figure>
             <img src="images/me-and-girlfriend.jpg" alt="Katya and I at the wedding"  width="200">
             <figcaption>
                 <em>My future wife and I celebrating a friends wedding</em>
             </figcaption>
         </figure>
-        <p>My name is Ivan Visotsky and I am a junior undergraduate student at the University of North Carolina at Charlotte.
+        <p class="paragraph">My name is Ivan Visotsky and I am a junior undergraduate student at the University of North Carolina at Charlotte.
             This is my personal home page that I created as part of the ITIS-3135 course better known as Front End Web App Development.
-        </p>
-        <p>I was born in Michigan to a family of immigrants from Estonia. I learned Russian as my first language and was raised
+            I was born in Michigan to a family of immigrants from Estonia. I learned Russian as my first language and was raised
             with Russian traditions. My family decided to move to Charlotte in 2013 due to the large Russian speaking population and better
-            opportunities. The first time I showed interest in computers was when I would take apart old motherboards from PCs and pull all of 
+            opportunities. </p>
+        <p class="paragraph">The first time I showed interest in computers was when I would take apart old motherboards from PCs and pull all of 
             the tiny pieces apart. I would wonder what all of the tiny capacitors and circuits were 
             meant to do. Then, after years of not pursuing this interest I started learning about cyber security at
             the Central Academy of Technology and Arts in Monroe, NC. This was where I realized that I would work in the IT industry.
@@ -101,6 +131,7 @@
     </main>
 
     <footer>
+        <hr style="margin-bottom: 20px;">
         <div data-include="components/footer.html"></div>
     </footer>
     <script src="scripts/HTMLInclude.min.js"></script>

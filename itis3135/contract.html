@@ -62,8 +62,8 @@
 
         footer {
             flex: 2;
-            margin-top: 200px;
             font-size: 14px;
+            margin-top: 10px;
             color: #acc9ff;
         }
 
@@ -79,6 +79,21 @@
             background-color: #aaa9a9;
             border-radius: 10%;
         }
+        @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
+            #colorbox {
+                background-color:#252525;
+            }
+        }
+        @media screen and ( min-width: 601px ) and ( max-width: 980px )  {
+            #colorbox {
+                background-color:#252525;
+            }
+        }
+        @media screen and ( min-width: 370px ) and ( max-width: 600px ) {
+            #colorbox {
+                background-color:#252525;
+            }
+        }
     </style>
 </head>
 <body>
@@ -86,6 +101,8 @@
         <div data-include="components/header.html"></div>
     </header>
     <main>    
+        <hr>
+        <h2>ITIS 3135 Contract</h2>
         <p>I, <em>Ivan B. Visotsky</em> agree to abide by the terms of the course contract in my 
         Fall 2025, ITIS-3135, Front-End Web Application Development with my instructor, Professor D.I. 
         von Briesen. I understand that all work that I do on publicly available
@@ -98,6 +115,7 @@
           code directly. I swear that I will only use these resources to learn, and 
           will not cut and paste code except where I have properly given credit 
           (i.e. external libraries) and never from my classmates. Signed: <em>Ivan B. Visotsky</em> , 31/07/2025</p>
+        <hr style="margin-top: 10em">
     </main>
     <footer>
         <div data-include="components/footer.html"></div>

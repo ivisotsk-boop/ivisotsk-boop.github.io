@@ -27,6 +27,11 @@
             padding: 0.2em;
             max-width: 150px;
         }
+        .slogan {
+            font-style: italic;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
         h1 {
             margin: 0;
             font-size: 2em;
@@ -35,6 +40,9 @@
             letter-spacing: 2px;
             text-align: center;
             flex-grow: 1;
+        }
+        h2 {
+            margin-bottom: -10px;
         }
         nav {
             display: flex;
@@ -56,10 +64,25 @@
             text-align: center;
             max-width: 900px;
             width: 70%;
-            margin: 0 auto;
+            margin: 0 auto 3.5em auto;
         }
         footer {
             text-align: center;
+        }
+        @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
+            #colorbox {
+                background-color:#afcbde;
+            }
+        }
+        @media screen and ( min-width: 601px ) and ( max-width: 980px )  {
+            #colorbox {
+                background-color:#afcbde;
+            }
+        }
+        @media screen and ( min-width: 370px ) and ( max-width: 600px ) {
+            #colorbox {
+                background-color:#afcbde;
+            }
         }
     </style>
 </head>
@@ -71,6 +94,7 @@
     </header>
     <main>
         <h2>About Us</h2>
+        <p class="slogan">Flying is our specialty</p>
         <p>Invincible Vultures Flying Cars started out as a crazy idea when Invincible Vulture decided
             that flying is for everyone. He proposed a world where the average working class family
             could have their own flying contraption taking them to new heights.</p>
