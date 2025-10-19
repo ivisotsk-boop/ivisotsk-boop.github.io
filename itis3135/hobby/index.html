@@ -7,16 +7,23 @@
       src="https://lint.page/kit/4d0fe3.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap"
+      rel="stylesheet"
+    />
     <title>Hobby Page</title>
     <style>
       :root {
-        --platinum: #E0E0E2;
+        --platinum: #e0e0e2;
         --dark-blue: #003366;
-        --payne-gray: #5E747F;
-        --munsell: #378398; 
+        --payne-gray: #5e747f;
+        --munsell: #378398;
+        --desc-color: #c0c0c8;
+        --h2-square-size: 280px; /* unified square size */
+        --h2-border-radius: 12px; /* rounded corners */
+        --description-width: 520px; /* independent width for descriptions */
       }
 
       body {
@@ -24,12 +31,12 @@
         padding: 0;
         background-color: var(--platinum);
         color: var(--payne-gray);
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
       }
 
       main {
-        max-width: 1200px;
         margin: 0 auto;
+        max-width: 1200px;
         padding: 20px;
         background-color: var(--platinum);
         color: var(--munsell);
@@ -50,11 +57,16 @@
         margin: 0;
         padding: 20px 0;
         font-family: "BBH Sans Bartle", sans-serif;
+        font-size: 3em;
         letter-spacing: 2px;
       }
 
       nav {
         border: 2px dashed var(--dark-blue);
+        width: 55%;
+        margin: 0 auto;
+        display: flex;
+        gap: 10px;
       }
 
       a {
@@ -72,19 +84,41 @@
         justify-content: center;
       }
       .description {
-        flex: 2;
+        width: var(--description-width);
+        height: var(--h2-square-size);
+        flex: 0 0 var(--description-width);
         align-items: center;
         justify-content: center;
-        background-color: var();
+        background-color: var(--desc-color);
+        font-size: 30px;
+        border-radius: var(--h2-border-radius);
+        display: flex;
       }
       .h2 {
+        background-color: var(--payne-gray);
+        color: var(--dark-blue);
+        padding: 20px;
+        margin: 1em;
+        width: var(--h2-square-size);
+        height: var(--h2-square-size);
+        border-radius: var(--h2-border-radius);
+        flex: 0 0 var(--h2-square-size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+
+      .schedule {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .event {
         flex: 1;
         align-items: center;
         justify-content: center;
-        background-color: var(--payne-gray);
-        color: var(--dark-blue);
-        padding: 20px 10px 20px 30px;
-        margin: 1em, 
       }
 
       footer {
@@ -99,10 +133,8 @@
     <header>
       <h1>Volleyball</h1>
       <nav>
-        <a href="#home">Home</a> 🏐
-        <a href="#about">About Me</a> 🏐
-        <a href="#when">When</a> 🏐
-        <a href="#where">Where</a> 🏐
+        <a href="#home">Home</a> 🏐 <a href="#about">About</a> 🏐
+        <a href="#when">When</a> 🏐 <a href="#where">Where</a> 🏐
         <a href="#rules">Rules and Formats</a> 🏐
         <a href="#why">Why Volleyball?</a> 🏐
         <a href="#ai">AI in Volleyball</a>
@@ -119,76 +151,100 @@
       </section>
       <section class="row" id="about">
         <h2 class="h2">About Us</h2>
-        <p class="description">We are a group of excited volleyball players that love not only the sport
-          but the community that comes with it. What started out as a few college students
-          playing recreationally has turned into a state-wide organization promoting young
-          athletic individuals that love volleyball.
+        <p class="description">
+          We are a group of excited volleyball players that love not only the
+          sport but the community that comes with it. What started out as a few
+          college students playing recreationally has turned into a state-wide
+          organization promoting young athletic individuals that love
+          volleyball.
         </p>
       </section>
       <section class="row" id="when">
         <h2 class="h2">When</h2>
         <div class="description">
-          <section class="annual-tournament">
-            <h3>Annual New Years Tournament</h3>
-          </section>
-          <section class="spring-practice">
-            <h3>Spring Practice</h3>
-            <p>Spring practices are held on Saturdays at the Downtown Sports Complex 
-              located at 123 Main St, Hometown, USA from </p>
-          </section>
-          <section class="summer-league">
-            <h3>Summer League</h3>
-            <p class="description">Our summer league runs from May 1st through July 15th. Games are played with
-              teams of six on a standard volleyball court every Saturday at 10 AM. The first 
-              two weeks are used for pool play and the season could run longer or shorter 
-              depending on the number of teams signed up</p>
-            <table>
-              <thead>
-                <tr>
-                  <th>League</th>
-                  <th>Team Cost</th>
-                  <th>Payout</th>
-                </tr>
-                <tr>
-                  <th>Recreational</th>
-                  <td>$120</td>
-                  <td>$300</td>
-                </tr>
-                <tr>
-                  <th>Competative</th>
-                  <td>$220</td>
-                  <td>$700</td>
-                </tr>
-                <tr>
-                  <th>Pro</th>
-                  <td>$350</td>
-                  <td>$1200</td>
-                </tr>
-              </thead>
-            </table>
-          </section>
+          <p>
+            Our current schedule consists of three main events: the Annual New
+            Years Tournament, the Spring Practice, and the Summer League.
+          </p>
+          <div class="schedule">
+            <section class="event annual-tournament">
+              <h3>Annual New Years Tournament</h3>
+              <p>
+                The annual New Years Tournament is held on January 1st at the
+                Downtown Sports Complex located at 123 Main St, Hometown, USA.
+                The tournament is a single-elimination tournament with a cash
+                prize for the winner. The tournament is open to all skill levels
+                and is a great way to start the new year. The tournament is a
+                single-elimination tournament with a cash prize for the winner.
+              </p>
+            </section>
+            <section class="event spring-practice">
+              <h3>Spring Practice</h3>
+              <p>
+                Spring practices are held on Saturdays at the Downtown Sports
+                Complex located at 123 Main St, Hometown, USA from
+              </p>
+            </section>
+            <section class="event summer-league">
+              <h3>Summer League</h3>
+              <p class="description">
+                Our summer league runs from May 1st through July 15th. Games are
+                played with teams of six on a standard volleyball court every
+                Saturday at 10 AM. The first two weeks are used for pool play
+                and the season could run longer or shorter depending on the
+                number of teams signed up
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>League</th>
+                    <th>Team Cost</th>
+                    <th>Payout</th>
+                  </tr>
+                  <tr>
+                    <th>Recreational</th>
+                    <td>$120</td>
+                    <td>$300</td>
+                  </tr>
+                  <tr>
+                    <th>Competative</th>
+                    <td>$220</td>
+                    <td>$700</td>
+                  </tr>
+                  <tr>
+                    <th>Pro</th>
+                    <td>$350</td>
+                    <td>$1200</td>
+                  </tr>
+                </thead>
+              </table>
+            </section>
+          </div>
         </div>
       </section>
       <section class="row" id="where">
         <h2 class="h2">Where</h2>
-        <p class="description">All of our events are held at the Downtown Sports Complex located at
+        <p class="description">
+          All of our events are held at the Downtown Sports Complex located at
           123 Main St, Hometown, USA. The complex features state-of-the-art
-          volleyball courts, locker rooms, and a pro shop for all your volleyball
-          needs.</p>
+          volleyball courts, locker rooms, and a pro shop for all your
+          volleyball needs.
+        </p>
       </section>
       <section class="row" id="rules">
         <h2 class="h2">Rules and Formats</h2>
-        <div class="description">
-
-        </div>
+        <div class="description"></div>
       </section>
       <section class="row" id="why">
         <h2 class="h2">Why Volleyball?</h2>
         <div class="description">
-          <p>Volleyball is more than just a sport; it's a community. It promotes teamwork,
-            communication, and physical fitness. Whether you're playing competitively or
-            just for fun, volleyball offers something for everyone. Join us and be part
-            of an exciting and supportive community!</p>
+          <p>
+            Volleyball is more than just a sport; it's a community. It promotes
+            teamwork, communication, and physical fitness. Whether you're
+            playing competitively or just for fun, volleyball offers something
+            for everyone. Join us and be part of an exciting and supportive
+            community!
+          </p>
         </div>
       </section>
       <section class="row" id="ai">
