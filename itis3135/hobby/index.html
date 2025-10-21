@@ -79,14 +79,13 @@
       }
 
       main {
-        /* fill remaining space between header and footer */
-        min-height: calc(100vh - var(--header-height) - var(--footer-height));
+        /* Let flexbox handle height; avoid extra scroll when content is short */
         padding: 1.5rem;
         display: block;
         width: 100%;
         box-sizing: border-box;
         max-width: 1100px;
-        margin: 1rem auto;
+        margin: 0 auto;
         flex: 1 0 auto;
       }
 
@@ -171,7 +170,7 @@
           padding: 0 2rem;
         }
         main {
-          margin: 1.5rem auto;
+          margin: 0 auto;
         }
         section {
           padding: 2rem;
@@ -241,13 +240,6 @@
         <figure>
           <img src="images/chat-backflip.png" alt="Person doing a backflip" />
           <figcaption>A smooth standing backflip demonstration.</figcaption>
-          <p>
-            <em
-              >AI prompt used: “cartoon-style illustration of a gymnast
-              performing a backflip mid-air, dynamic motion, blue
-              background.”</em
-            >
-          </p>
         </figure>
       </section>
 
@@ -266,12 +258,6 @@
         <figure>
           <img src="images/chat-coach.png" alt="Coach spotting a gymnast" />
           <figcaption>Coaches ensure safe learning during flips.</figcaption>
-          <p>
-            <em
-              >AI prompt used: “photo of a coach assisting a young gymnast with
-              a backflip indoors, bright colors.”</em
-            >
-          </p>
         </figure>
       </section>
 
@@ -291,12 +277,6 @@
           <figcaption>
             Warm-up stretches prepare your body for safe flips.
           </figcaption>
-          <p>
-            <em
-              >AI prompt used: “illustration of an athlete stretching before
-              gymnastics, warm lighting, cartoon style.”</em
-            >
-          </p>
         </figure>
       </section>
 
@@ -310,12 +290,6 @@
         <figure>
           <img src="images/foam.png" alt="Gym foam pit" />
           <figcaption>Foam pits help you practice flips safely.</figcaption>
-          <p>
-            <em
-              >AI prompt used: “cartoon image of a gymnastics foam pit with
-              bright padding.”</em
-            >
-          </p>
         </figure>
       </section>
 
@@ -329,12 +303,6 @@
         <figure>
           <img src="images/backflip-steps.png" alt="Backflip motion sequence" />
           <figcaption>Step-by-step backflip sequence.</figcaption>
-          <p>
-            <em
-              >AI prompt used: “sequence illustration of a gymnast performing a
-              backflip, 5 frames, clean white background.”</em
-            >
-          </p>
         </figure>
       </section>
 
@@ -351,12 +319,6 @@
         <figure>
           <img src="images/wall-flip.png" alt="Parkour backflip" />
           <figcaption>Flipping can be both art and athleticism.</figcaption>
-          <p>
-            <em
-              >AI prompt used: “urban parkour athlete doing a backflip off a
-              wall, stylized comic look.”</em
-            >
-          </p>
         </figure>
       </section>
 
@@ -364,25 +326,12 @@
         <h2>AI Prompts Used</h2>
         <ul>
           <li>
-            “cartoon-style illustration of a gymnast performing a backflip
-            mid-air, dynamic motion, blue background.”
+            “write me a script for my backflip website that when a link is
+            clicked it shows a different section of the website”
           </li>
           <li>
-            “photo of a coach assisting a young gymnast with a backflip indoors,
-            bright colors.”
-          </li>
-          <li>
-            “illustration of an athlete stretching before gymnastics, warm
-            lighting, cartoon style.”
-          </li>
-          <li>“cartoon image of a gymnastics foam pit with bright padding.”</li>
-          <li>
-            “sequence illustration of a gymnast performing a backflip, 5 frames,
-            clean white background.”
-          </li>
-          <li>
-            “urban parkour athlete doing a backflip off a wall, stylized comic
-            look.”
+            "how can I create a good looking card element in my website that
+            floats above the background"
           </li>
         </ul>
       </section>
