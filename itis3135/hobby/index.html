@@ -1,206 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://lint.page/kit/4d0fe3.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
-    <title>Hobby Page</title>
-    <style>
-      :root {
-        --platinum: #E0E0E2;
-        --dark-blue: #003366;
-        --payne-gray: #5E747F;
-        --munsell: #378398; 
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backflips – The Art of the Flip</title>
 
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: var(--platinum);
-        color: var(--payne-gray);
-        font-family: 'Montserrat', sans-serif;
-      }
+  <style>
+    :root {
+      --header-height: 76px;
+      --footer-height: 82px;
+      --bg-1: #0f1724; /* deep navy */
+      --bg-2: #0b3a4a; /* teal navy */
+      --accent: #ffb86b; /* warm gold */
+      --muted: #e6eef6; /* light card */
+      --text: #e9f0f6;
+      --card-bg: rgba(255,255,255,0.06);
+    }
 
-      main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: var(--platinum);
-        color: var(--munsell);
-        display: flex;
-        flex-direction: column;
-      }
+    /* Layout: header + main + footer, main fills remaining viewport height */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      color: var(--text);
+    }
 
-      header {
-        text-align: center;
-        padding: 10px 0;
-        background-color: var(--payne-gray);
-        color: var(--platinum);
-      }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+    }
 
-      h1 {
-        background-color: var(--payne-gray);
-        color: var(--dark-blue);
-        margin: 0;
-        padding: 20px 0;
-        font-family: "BBH Sans Bartle", sans-serif;
-        letter-spacing: 2px;
-      }
+    header {
+      height: var(--header-height);
+      min-height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(0,0,0,0.08));
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--accent);
+      padding: 0 1rem;
+    }
 
-      nav {
-        border: 2px dashed var(--dark-blue);
-      }
+    header h1 { margin: 0; font-size: 1.25rem; letter-spacing: 0.5px; }
 
-      a {
-        color: var(--dark-blue);
-        text-decoration: none;
-      }
+    nav {
+      margin-left: 1rem;
+    }
 
-      a:hover {
-        color: var(--white);
-      }
-      section {
-        display: flex;
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-      }
-      .description {
-        flex: 2;
-        align-items: center;
-        justify-content: center;
-        background-color: var();
-      }
-      .h2 {
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--payne-gray);
-        color: var(--dark-blue);
-        padding: 20px 10px 20px 30px;
-        margin: 1em, 
-      }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 0.6rem;
+      padding: 0.25rem 0.35rem;
+      border-radius: 6px;
+    }
 
-      footer {
-        text-align: center;
-        padding: 10px 0;
-        background-color: var(--payne-gray);
-        color: var(--platinum);
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Volleyball</h1>
-      <nav>
-        <a href="#home">Home</a> 🏐
-        <a href="#about">About Me</a> 🏐
-        <a href="#when">When</a> 🏐
-        <a href="#where">Where</a> 🏐
-        <a href="#rules">Rules and Formats</a> 🏐
-        <a href="#why">Why Volleyball?</a> 🏐
-        <a href="#ai">AI in Volleyball</a>
-      </nav>
-    </header>
-    <main>
-      <section class="row" id="home">
-        <h2 class="h2">Home</h2>
-        <p class="description">
-          Welcome to the home of volleyball. Whether you have been playing the
-          sport for years or are interested in trying it out for the first time
-          this is the place for you. An all about Volleyball page
-        </p>
-      </section>
-      <section class="row" id="about">
-        <h2 class="h2">About Us</h2>
-        <p class="description">We are a group of excited volleyball players that love not only the sport
-          but the community that comes with it. What started out as a few college students
-          playing recreationally has turned into a state-wide organization promoting young
-          athletic individuals that love volleyball.
-        </p>
-      </section>
-      <section class="row" id="when">
-        <h2 class="h2">When</h2>
-        <div class="description">
-          <section class="annual-tournament">
-            <h3>Annual New Years Tournament</h3>
-          </section>
-          <section class="spring-practice">
-            <h3>Spring Practice</h3>
-            <p>Spring practices are held on Saturdays at the Downtown Sports Complex 
-              located at 123 Main St, Hometown, USA from </p>
-          </section>
-          <section class="summer-league">
-            <h3>Summer League</h3>
-            <p class="description">Our summer league runs from May 1st through July 15th. Games are played with
-              teams of six on a standard volleyball court every Saturday at 10 AM. The first 
-              two weeks are used for pool play and the season could run longer or shorter 
-              depending on the number of teams signed up</p>
-            <table>
-              <thead>
-                <tr>
-                  <th>League</th>
-                  <th>Team Cost</th>
-                  <th>Payout</th>
-                </tr>
-                <tr>
-                  <th>Recreational</th>
-                  <td>$120</td>
-                  <td>$300</td>
-                </tr>
-                <tr>
-                  <th>Competative</th>
-                  <td>$220</td>
-                  <td>$700</td>
-                </tr>
-                <tr>
-                  <th>Pro</th>
-                  <td>$350</td>
-                  <td>$1200</td>
-                </tr>
-              </thead>
-            </table>
-          </section>
-        </div>
-      </section>
-      <section class="row" id="where">
-        <h2 class="h2">Where</h2>
-        <p class="description">All of our events are held at the Downtown Sports Complex located at
-          123 Main St, Hometown, USA. The complex features state-of-the-art
-          volleyball courts, locker rooms, and a pro shop for all your volleyball
-          needs.</p>
-      </section>
-      <section class="row" id="rules">
-        <h2 class="h2">Rules and Formats</h2>
-        <div class="description">
+    nav a:hover, nav a:focus {
+      background: rgba(255,184,107,0.08);
+      color: var(--accent);
+      outline: none;
+    }
 
-        </div>
-      </section>
-      <section class="row" id="why">
-        <h2 class="h2">Why Volleyball?</h2>
-        <div class="description">
-          <p>Volleyball is more than just a sport; it's a community. It promotes teamwork,
-            communication, and physical fitness. Whether you're playing competitively or
-            just for fun, volleyball offers something for everyone. Join us and be part
-            of an exciting and supportive community!</p>
-        </div>
-      </section>
-      <section class="row" id="ai">
-        <h2 class="h2"></h2>
-        <p class="description"></p>
-      </section>
-    </main>
-    <footer>
-      <p>
-        Page designed and built by
-        <a href="../../visotskyvision.com/index.html">Visotsky Vision</a> © 2025
-      </p>
-    </footer>
-  </body>
+    main {
+      /* fill remaining space between header and footer */
+      min-height: calc(100vh - var(--header-height) - var(--footer-height));
+      padding: 1.5rem;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 1100px;
+      margin: 1rem auto;
+      flex: 1 0 auto;
+    }
+
+    /* Sections appear as cards centered inside main */
+    section {
+      display: none;
+      text-align: left;
+      background: var(--card-bg);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.03);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+      color: var(--muted);
+    }
+
+    section.active { display: block; }
+
+    h2 { color: var(--accent); margin-top: 0; }
+
+    figure { text-align: center; margin: 1rem 0; }
+
+    figure img { max-width: 100%; height: auto; border-radius: 8px; }
+
+    ol, ul { color: var(--muted); }
+
+    .divider { margin: 0 0.4em; color: rgba(255,184,107,0.6); }
+
+    footer {
+      height: var(--footer-height);
+      min-height: var(--footer-height);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+      border-top: 1px solid rgba(255,255,255,0.03);
+      color: var(--muted);
+      padding: 0.5rem 1rem;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    footer img { height: 28px; vertical-align: middle; margin: 0 6px; }
+
+    a:focus { outline: 3px solid rgba(255,184,107,0.25); border-radius: 6px; }
+
+    /* Responsive tweaks */
+    @media (min-width: 780px) {
+      header { justify-content: space-between; padding: 0 2rem; }
+      main { margin: 1.5rem auto; }
+      section { padding: 2rem; }
+    }
+
+    @media (max-width: 520px) {
+      :root { --header-height: 96px; --footer-height: 120px; }
+      nav { display: block; }
+      nav a { display: inline-block; margin: 0.25rem 0.4rem; }
+    }
+  </style>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    window.onload = function() {
+      showSection("what");
+    };
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Backflips</h1>
+    <nav>
+      <a href="#" onclick="showSection('what')">What</a><span class="divider">⚡</span>
+      <a href="#" onclick="showSection('who')">Who</a><span class="divider">⚡</span>
+      <a href="#" onclick="showSection('when')">When</a><span class="divider">⚡</span>
+      <a href="#" onclick="showSection('where')">Where</a><span class="divider">⚡</span>
+      <a href="#" onclick="showSection('how')">How</a><span class="divider">⚡</span>
+      <a href="#" onclick="showSection('why')">Why</a><span class="divider">⚡</span>
+      <a href="#" onclick="showSection('ai-prompts')">AI Prompts</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="what">
+      <h2>What Is a Backflip?</h2>
+      <p>A backflip is a gymnastic movement in which a person jumps into the air and rotates backward before landing on their feet. It’s both an athletic feat and an expression of control, courage, and confidence.</p>
+      <p>Backflips are common in gymnastics, parkour, martial arts, and even dance. They require strength, timing, and trust in your own motion.</p>
+      <figure>
+        <img src="images/chat-backflip.png" alt="Person doing a backflip">
+        <figcaption>A smooth standing backflip demonstration.</figcaption>
+        <p><em>AI prompt used: “cartoon-style illustration of a gymnast performing a backflip mid-air, dynamic motion, blue background.”</em></p>
+      </figure>
+    </section>
+
+    <section id="who">
+      <h2>Who Does Backflips?</h2>
+      <p>Anyone with proper training and safety precautions can learn a backflip! Gymnasts, cheerleaders, freerunners, and stunt performers commonly practice them.</p>
+      <p>Many athletes start with spotting and mats before progressing to unassisted flips. Coaches play a huge role in helping new learners master the move safely.</p>
+      <figure>
+        <img src="images/chat-coach.png" alt="Coach spotting a gymnast">
+        <figcaption>Coaches ensure safe learning during flips.</figcaption>
+        <p><em>AI prompt used: “photo of a coach assisting a young gymnast with a backflip indoors, bright colors.”</em></p>
+      </figure>
+    </section>
+
+    <section id="when">
+      <h2>When to Practice Backflips</h2>
+      <p>The best time to practice is when you’re rested, focused, and warmed up. Morning or early afternoon sessions often yield the best energy and concentration.</p>
+      <p>Avoid practicing on hard surfaces or when you’re tired — fatigue increases risk of injury.</p>
+      <figure>
+        <img src="images/stretching.png" alt="Athlete warming up">
+        <figcaption>Warm-up stretches prepare your body for safe flips.</figcaption>
+        <p><em>AI prompt used: “illustration of an athlete stretching before gymnastics, warm lighting, cartoon style.”</em></p>
+      </figure>
+    </section>
+
+    <section id="where">
+      <h2>Where to Do Backflips</h2>
+      <p>Gyms with padded floors or foam pits are ideal for beginners. Once experienced, outdoor grass or parkour spaces can be great too.</p>
+      <p>Always check your environment for safety before attempting flips.</p>
+      <figure>
+        <img src="images/foam.png" alt="Gym foam pit">
+        <figcaption>Foam pits help you practice flips safely.</figcaption>
+        <p><em>AI prompt used: “cartoon image of a gymnastics foam pit with bright padding.”</em></p>
+      </figure>
+    </section>
+
+    <section id="how">
+      <h2>How to Learn a Backflip</h2>
+      <ol>
+        <li>Start with a back roll and build confidence moving backward.</li>
+        <li>Practice jumping straight up — not backward — to build lift.</li>
+        <li>Use a spotter or foam pit when first attempting flips.</li>
+      </ol>
+      <figure>
+        <img src="" alt="Backflip motion sequence">
+        <figcaption>Step-by-step backflip sequence.</figcaption>
+        <p><em>AI prompt used: “sequence illustration of a gymnast performing a backflip, 5 frames, clean white background.”</em></p>
+      </figure>
+    </section>
+
+    <section id="why">
+      <h2>Why Do Backflips?</h2>
+      <p>Backflips combine excitement, challenge, and confidence. Learning one pushes both your body and mind to new limits.</p>
+      <p>They’re a great way to build balance, coordination, and mental focus — and they look awesome!</p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Backflip_parkour.jpg" alt="Parkour backflip">
+        <figcaption>Flipping can be both art and athleticism.</figcaption>
+        <p><em>AI prompt used: “urban parkour athlete doing a backflip off a wall, stylized comic look.”</em></p>
+      </figure>
+    </section>
+
+    <section id="ai-prompts">
+      <h2>AI Prompts Used</h2>
+      <ul>
+        <li>“cartoon-style illustration of a gymnast performing a backflip mid-air, dynamic motion, blue background.”</li>
+        <li>“photo of a coach assisting a young gymnast with a backflip indoors, bright colors.”</li>
+        <li>“illustration of an athlete stretching before gymnastics, warm lighting, cartoon style.”</li>
+        <li>“cartoon image of a gymnastics foam pit with bright padding.”</li>
+        <li>“sequence illustration of a gymnast performing a backflip, 5 frames, clean white background.”</li>
+        <li>“urban parkour athlete doing a backflip off a wall, stylized comic look.”</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://validator.w3.org/" target="_blank"><img src="https://www.w3.org/html/logo/downloads/HTML5_Badge_32.png" alt="HTML Validator"></a>
+      <a href="https://jigsaw.w3.org/css-validator/" target="_blank"><img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="CSS Validator"></a>
+      <a href="https://wave.webaim.org/" target="_blank"><img src="https://wave.webaim.org/img/wavelogo.png" alt="Accessibility Validator"></a>
+    </p>
+    <p>Page designed and built by <a href="../../visotskyvision.com/index.html">Visotsky Vision</a> © 2025</p>
+  </footer>
+
+</body>
 </html>
