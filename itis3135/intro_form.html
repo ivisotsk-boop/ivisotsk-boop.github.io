@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Introduction Form</title>
+    <link rel="stylesheet" href="styles/default.css" />
+    <style>
+      /* Scoped vars for this page only */
+      #intro-form {
+        --input-border: #d1d5db; /* gray-300 */
+        --input-bg: transparent;
+        --placeholder: #6b7280; /* gray-500 */
+        --ring: rgba(59, 130, 246, 0.5); /* blue-500 @ 50% */
+        --ring-solid: #3b82f6; /* blue-500 */
+        --destructive: #ef4444; /* red-500 */
+        --shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+        --radius: 0.375rem; /* rounded-md */
+        --focus-ring: 0 0 0 3px var(--ring);
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* Base control */
+      #intro-form input[type="text"],
+      #intro-form input[type="url"],
+      #intro-form input[type="date"],
+      #intro-form textarea {
+        width: 100%;
+        box-sizing: border-box; /* prevent overflow beyond fieldset */
+        background: var(--input-bg);
+        border: 1px solid var(--input-border);
+        border-radius: var(--radius);
+        padding: 0.5rem 0.75rem; /* py-2 px-3 */
+        font-size: 1rem; /* text-base */
+        line-height: 1.5;
+        color: #e5e7eb; /* light text for better contrast */
+        caret-color: #e5e7eb;
+        box-shadow: var(--shadow);
+        outline: none;
+        transition: color 150ms ease, box-shadow 150ms ease,
+          border-color 150ms ease;
+      }
+
+      /* Ensure autofilled fields keep high-contrast text color */
+      #intro-form input:-webkit-autofill,
+      #intro-form textarea:-webkit-autofill {
+        -webkit-text-fill-color: #e5e7eb;
+        transition: background-color 9999s ease-in-out 0s;
+      }
+
+      /* Textarea specifics */
+      #intro-form textarea {
+        min-height: 4rem; /* min-h-16 */
+        resize: vertical;
+      }
+
+      /* Placeholder */
+      #intro-form input::placeholder,
+      #intro-form textarea::placeholder {
+        color: var(--placeholder);
+      }
+
+      /* Focus ring */
+      #intro-form input[type="text"]:focus,
+      #intro-form input[type="url"]:focus,
+      #intro-form input[type="date"]:focus,
+      #intro-form textarea:focus {
+        border-color: var(--ring-solid);
+        box-shadow: var(--focus-ring);
+      }
+
+      /* Disabled */
+      #intro-form input:disabled,
+      #intro-form textarea:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+
+      /* Error states */
+      #intro-form [aria-invalid="true"],
+      #intro-form input:invalid,
+      #intro-form textarea:invalid {
+        border-color: var(--destructive);
+      }
+      #intro-form [aria-invalid="true"]:focus,
+      #intro-form input:invalid:focus,
+      #intro-form textarea:invalid:focus {
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div data-include="components/header.html"></div>
+    </header>
+    <main>
+      <h2>Introduction Form</h2>
+      <h3>Please submit the form below.</h3>
+
+      <section id="form-section">
+        <form id="intro-form" novalidate>
+          <fieldset>
+            <legend>Identity</legend>
+            <label for="firstName">First Name *</label>
+            <input
+              id="firstName"
+              name="firstName"
+              type="text"
+              required
+              placeholder="First name"
+              value="Ivan"
+            />
+
+            <label for="middleName">Middle Name or Initial (optional)</label>
+            <input
+              id="middleName"
+              name="middleName"
+              type="text"
+              placeholder="Middle name or initial"
+            />
+
+            <label for="preferredName"
+              >Nickname / Preferred Name (optional)</label
+            >
+            <input
+              id="preferredName"
+              name="preferredName"
+              type="text"
+              placeholder="Nickname or preferred name"
+            />
+
+            <label for="lastName">Last Name *</label>
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              required
+              placeholder="Last name"
+              value="Visotsky"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Acknowledgment</legend>
+            <label for="ackStatement">Acknowledgment Statement *</label>
+            <textarea
+              id="ackStatement"
+              name="ackStatement"
+              required
+              placeholder="Type your acknowledgment statement"
+              rows="3"
+            >
+I acknowledge that the information provided is accurate to the best of my knowledge.</textarea
+            >
+
+            <label for="ackDate">Acknowledgment Date *</label>
+            <input id="ackDate" name="ackDate" type="date" required />
+          </fieldset>
+
+          <fieldset>
+            <legend>Mascot</legend>
+            <label for="mascotAdj">Mascot Adjective *</label>
+            <input
+              id="mascotAdj"
+              name="mascotAdj"
+              type="text"
+              required
+              placeholder="e.g., Majestic"
+            />
+
+            <label for="mascotAnimal">Mascot Animal *</label>
+            <input
+              id="mascotAnimal"
+              name="mascotAnimal"
+              type="text"
+              required
+              placeholder="e.g., Vulture"
+            />
+
+            <label for="divider">Divider *</label>
+            <input
+              id="divider"
+              name="divider"
+              type="text"
+              required
+              maxlength="3"
+              placeholder="e.g., ~ or | or ♥️"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Picture</legend>
+            <label for="picture">Picture (defaults to your image)</label>
+            <input id="picture" name="picture" type="file" accept="image/*" />
+
+            <input
+              id="pictureUrl"
+              name="pictureUrl"
+              type="url"
+              placeholder="https://example.com/me.jpg"
+            />
+
+            <label for="pictureCaption">Picture Caption *</label>
+            <textarea
+              id="pictureCaption"
+              name="pictureCaption"
+              required
+              placeholder="Enter picture caption"
+              rows="2"
+            >
+My future wife and I celebrating a friends wedding</textarea
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend>Personal Statement</legend>
+            <label for="paragraph1">Paragraph 1 *</label>
+            <textarea
+              id="paragraph1"
+              name="paragraph1"
+              required
+              placeholder="Write the first paragraph"
+              rows="4"
+            ></textarea>
+
+            <label for="paragraph2">Paragraph 2 *</label>
+            <textarea
+              id="paragraph2"
+              name="paragraph2"
+              required
+              placeholder="Write the second paragraph"
+              rows="4"
+            ></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>Seven Main Bullets</legend>
+            <small>(Optional; leave blank to omit in results)</small>
+            <label for="bullet1">Personal Background</label>
+            <input
+              id="bullet1"
+              name="bullet1"
+              type="text"
+              placeholder="Personal Background"
+            />
+
+            <label for="bullet2">Academic Background</label>
+            <input
+              id="bullet2"
+              name="bullet2"
+              type="text"
+              placeholder="Academic Background"
+            />
+
+            <label for="bullet3">Professional Background</label>
+            <input
+              id="bullet3"
+              name="bullet3"
+              type="text"
+              placeholder="Professional Background"
+            />
+
+            <label for="bullet4">Course Background</label>
+            <input
+              id="bullet4"
+              name="bullet4"
+              type="text"
+              placeholder="Course Background"
+            />
+
+            <label for="bullet5">Primary Computer Platform</label>
+            <input
+              id="bullet5"
+              name="bullet5"
+              type="text"
+              placeholder="Primary Computer Platform"
+            />
+
+            <label for="bullet6">Funny/Interesting Item (optional)</label>
+            <input
+              id="bullet6"
+              name="bullet6"
+              type="text"
+              placeholder="Funny/Interesting Item (optional)"
+            />
+
+            <label for="bullet7">Something to Share (optional)</label>
+            <input
+              id="bullet7"
+              name="bullet7"
+              type="text"
+              placeholder="Something to Share (optional)"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Courses</legend>
+            <div id="courses-container"></div>
+            <button type="button" id="add-course">Add Course</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Quote</legend>
+            <label for="quote">Quote</label>
+            <input
+              id="quote"
+              name="quote"
+              type="text"
+              placeholder='"Strive not to be a success, but rather to be of value."'
+            />
+
+            <label for="quoteAuthor">Quote Author</label>
+            <input
+              id="quoteAuthor"
+              name="quoteAuthor"
+              type="text"
+              placeholder="Albert Einstein"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Links</legend>
+            <small>(Optional; leave blank to omit in results)</small>
+            <div class="links">
+              <div class="link-row">
+                <input
+                  name="linkText1"
+                  type="text"
+                  placeholder="Link 1 Text (e.g., LinkedIn)"
+                />
+                <input name="linkUrl1" type="url" placeholder="https://..." />
+              </div>
+              <div class="link-row">
+                <input name="linkText2" type="text" placeholder="Link 2 Text" />
+                <input name="linkUrl2" type="url" placeholder="https://..." />
+              </div>
+              <div class="link-row">
+                <input name="linkText3" type="text" placeholder="Link 3 Text" />
+                <input name="linkUrl3" type="url" placeholder="https://..." />
+              </div>
+              <div class="link-row">
+                <input name="linkText4" type="text" placeholder="Link 4 Text" />
+                <input name="linkUrl4" type="url" placeholder="https://..." />
+              </div>
+              <div class="link-row">
+                <input name="linkText5" type="text" placeholder="Link 5 Text" />
+                <input name="linkUrl5" type="url" placeholder="https://..." />
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="controls">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="button" id="clear">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="results" hidden></section>
+    </main>
+
+    <footer>
+      <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/introduction.js" defer></script>
+  </body>
+</html>

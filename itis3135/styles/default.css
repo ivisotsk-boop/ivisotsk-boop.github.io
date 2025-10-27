@@ -45,8 +45,8 @@ p {
 }
 
 fieldset {
-  width: 50%;
-  margin: 0 auto;
+  width: 80%;
+  margin: 24px auto;
 }
 
 a {
@@ -70,7 +70,7 @@ footer {
 
 @media (max-width: 600px) {
   :root {
-    --min-height: calc(100vh - 220px);
+    --min-height: calc(100vh - 270px);
   }
 
   main {
@@ -109,6 +109,7 @@ footer {
 
   fieldset {
     width: 100%;
+    margin: 16px auto;
   }
   footer {
     font-size: 13px;
@@ -118,7 +119,7 @@ footer {
 
 @media (min-width: 601px) and (max-width: 1024px) {
   :root {
-    --min-height: calc(100vh - 240px);
+    --min-height: calc(100vh - 270px);
   }
 
   main {
@@ -150,7 +151,8 @@ footer {
   }
 
   fieldset {
-    width: 70%;
+    width: 80%;
+    margin: 20px auto;
   }
   footer {
     font-size: 14px;
@@ -181,6 +183,7 @@ footer {
     gap: 20px;
   }
   fieldset {
-    width: 50%;
+    width: 70%;
+    margin: 28px auto;
   }
 }
