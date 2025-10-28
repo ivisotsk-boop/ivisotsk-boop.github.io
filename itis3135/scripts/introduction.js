@@ -45,14 +45,6 @@
     const addCourseBtn = byId("add-course");
     if (addCourseBtn)
       addCourseBtn.addEventListener("click", () => addCourseRow());
-
-    // Prefill one course row as an example
-    addCourseRow({
-      dept: "ITIS",
-      num: "3135",
-      name: "Web App Dev",
-      reason: "Required for program",
-    });
   }
 
   let courseRowIdCounter = 0;
@@ -170,7 +162,6 @@
 
     // Build HTML that mirrors introduction.html structure and styles
     const headerHtml = `
-      <h2>Introduction</h2>
       <figure>
         <img src="${pictureSrc}" alt="Uploaded or default image" width="200" />
         <figcaption><em>${pictureCaption}</em></figcaption>
@@ -218,19 +209,27 @@
     const mascotLine = `${mascotAdj} ${mascotAnimal}`.trim();
 
     results.innerHTML = `
-      <h3>${nameLine} ${divider} ${mascotLine}</h3>
+      <h2>Introduction Form ${divider} ${mascotLine}</h2>
       ${headerHtml}
       ${bulletsHtml}
       ${coursesHtml}
       ${quoteHtml}
       ${linksHtml}
-      <hr />
       <p><strong>Acknowledgment:</strong> ${ackStatement} (${ackDate})</p>
       <p><a href="#" id="reset-link">Reset and fill again</a></p>
     `;
 
+    // Hide the form section and show results
     formSection.hidden = true;
     results.hidden = false;
+
+    // Hide the page title (the H2 in intro_form.html) while showing results
+    const pageTitle = document.querySelector("main > h2");
+    if (pageTitle) pageTitle.hidden = true;
+
+    // Also hide the instruction H3 (e.g., "Please submit the form below.") while results are shown
+    const instructionH3 = document.querySelector("main > h3");
+    if (instructionH3) instructionH3.hidden = true;
 
     // reset link restores form view
     const resetLink = qs("#reset-link", results);
@@ -239,6 +238,8 @@
         e.preventDefault();
         results.hidden = true;
         formSection.hidden = false;
+        if (pageTitle) pageTitle.hidden = false; // Show the page title again when resetting
+        if (instructionH3) instructionH3.hidden = false; // Show instruction H3 again when resetting
       });
     }
   }

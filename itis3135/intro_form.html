@@ -102,7 +102,7 @@
       <h2>Introduction Form</h2>
       <h3>Please submit the form below.</h3>
 
-      <section id="form-section">
+      <div id="form-section">
         <form id="intro-form" novalidate>
           <fieldset>
             <legend>Identity</legend>
@@ -146,23 +146,6 @@
           </fieldset>
 
           <fieldset>
-            <legend>Acknowledgment</legend>
-            <label for="ackStatement">Acknowledgment Statement *</label>
-            <textarea
-              id="ackStatement"
-              name="ackStatement"
-              required
-              placeholder="Type your acknowledgment statement"
-              rows="3"
-            >
-I acknowledge that the information provided is accurate to the best of my knowledge.</textarea
-            >
-
-            <label for="ackDate">Acknowledgment Date *</label>
-            <input id="ackDate" name="ackDate" type="date" required />
-          </fieldset>
-
-          <fieldset>
             <legend>Mascot</legend>
             <label for="mascotAdj">Mascot Adjective *</label>
             <input
@@ -171,6 +154,7 @@ I acknowledge that the information provided is accurate to the best of my knowle
               type="text"
               required
               placeholder="e.g., Majestic"
+              value="Invincible"
             />
 
             <label for="mascotAnimal">Mascot Animal *</label>
@@ -180,6 +164,7 @@ I acknowledge that the information provided is accurate to the best of my knowle
               type="text"
               required
               placeholder="e.g., Vulture"
+              value="Vulture"
             />
 
             <label for="divider">Divider *</label>
@@ -190,6 +175,7 @@ I acknowledge that the information provided is accurate to the best of my knowle
               required
               maxlength="3"
               placeholder="e.g., ~ or | or ♥️"
+              value="|"
             />
           </fieldset>
 
@@ -197,14 +183,7 @@ I acknowledge that the information provided is accurate to the best of my knowle
             <legend>Picture</legend>
             <label for="picture">Picture (defaults to your image)</label>
             <input id="picture" name="picture" type="file" accept="image/*" />
-
-            <input
-              id="pictureUrl"
-              name="pictureUrl"
-              type="url"
-              placeholder="https://example.com/me.jpg"
-            />
-
+            <br>
             <label for="pictureCaption">Picture Caption *</label>
             <textarea
               id="pictureCaption"
@@ -212,8 +191,7 @@ I acknowledge that the information provided is accurate to the best of my knowle
               required
               placeholder="Enter picture caption"
               rows="2"
-            >
-My future wife and I celebrating a friends wedding</textarea
+            >My future wife and I celebrating a friends wedding</textarea
             >
           </fieldset>
 
@@ -226,7 +204,7 @@ My future wife and I celebrating a friends wedding</textarea
               required
               placeholder="Write the first paragraph"
               rows="4"
-            ></textarea>
+            >My name is Ivan Visotsky and I am a junior undergraduate student at the University of North Carolina at Charlotte. This is my personal home page that I created as part of the ITIS-3135 course better known as Front End Web App Development. I was born in Michigan to a family of immigrants from Estonia. I learned Russian as my first language and was raised with Russian traditions. My family decided to move to Charlotte in 2013 due to the large Russian speaking population and better opportunities.</textarea>
 
             <label for="paragraph2">Paragraph 2 *</label>
             <textarea
@@ -235,7 +213,7 @@ My future wife and I celebrating a friends wedding</textarea
               required
               placeholder="Write the second paragraph"
               rows="4"
-            ></textarea>
+            >The first time I showed interest in computers was when I would take apart old motherboards from PCs and pull all of the tiny pieces apart. I would wonder what all of the tiny capacitors and circuits were meant to do. Then, after years of not pursuing this interest I started learning about cyber security at the Central Academy of Technology and Arts in Monroe, NC. This was where I realized that I would work in the IT industry. Now I am studying Computer Science at UNCC and am excited to learn as much as I can about programming and software development.</textarea>
           </fieldset>
 
           <fieldset>
@@ -300,8 +278,33 @@ My future wife and I celebrating a friends wedding</textarea
 
           <fieldset>
             <legend>Courses</legend>
+            <small>(Optional; leave empty if you don't want to add any courses)</small>
             <div id="courses-container"></div>
             <button type="button" id="add-course">Add Course</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Acknowledgment</legend>
+            <label for="ackStatement">Acknowledgment Statement *</label>
+            <textarea
+              id="ackStatement"
+              name="ackStatement"
+              required
+              placeholder="Type your acknowledgment statement"
+              rows="3"
+            >I acknowledge that the information provided is accurate to the best of my knowledge</textarea
+            >
+
+            <label for="ackDate">Acknowledgment Date *</label>
+            
+            <input
+              id="ackDate"
+              name="ackDate"
+              type="date"
+              required
+              value="2025-08-03"
+              data-date-fallback="true"
+            />
           </fieldset>
 
           <fieldset>
@@ -353,22 +356,129 @@ My future wife and I celebrating a friends wedding</textarea
               </div>
             </div>
           </fieldset>
-
-          <div class="controls">
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-            <button type="button" id="clear">Clear</button>
-          </div>
         </form>
-      </section>
+        
+        <div class="controls">
+          <button type="submit" form="intro-form">Submit</button>
+          <button type="reset" form="intro-form">Reset</button>
+          <button type="button" id="clear">Clear</button>
+        </div>
+      </div>
 
-      <section id="results" hidden></section>
+      <div id="results" hidden></div>
     </main>
 
     <footer>
       <div data-include="components/footer.html"></div>
     </footer>
     <script src="scripts/HTMLInclude.min.js"></script>
+    <script>
+      // Fallback for browsers that don't support input[type="date"].
+      // If unsupported, switch the field to a text input with a YYYY-MM-DD
+      // pattern, a small hint, and a submit-time validation guard.
+      (function () {
+        function supportsDateInput() {
+          var i = document.createElement('input');
+          i.setAttribute('type', 'date');
+          var invalidValue = 'not-a-date';
+          i.value = invalidValue;
+          // Some browsers change the type back to 'text' if unsupported.
+          return i.type === 'date' && i.value !== invalidValue;
+        }
+
+        if (!supportsDateInput()) {
+          var el = document.getElementById('ackDate');
+          if (!el) return;
+
+          // Try to lazy-load a lightweight datepicker (flatpickr).
+          // If loading or initialization fails, fall back to the simple
+          // text-input + pattern approach implemented below.
+          function loadCSS(href) {
+            return new Promise(function (resolve, reject) {
+              var l = document.createElement('link');
+              l.rel = 'stylesheet';
+              l.href = href;
+              l.onload = function () { resolve(); };
+              l.onerror = function () { reject(new Error('CSS load error')); };
+              document.head.appendChild(l);
+            });
+          }
+
+          function loadScript(src) {
+            return new Promise(function (resolve, reject) {
+              var s = document.createElement('script');
+              s.src = src;
+              s.async = true;
+              s.onload = function () { resolve(); };
+              s.onerror = function () { reject(new Error('Script load error')); };
+              document.head.appendChild(s);
+            });
+          }
+
+          var FLATPICKR_CSS = 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css';
+          var FLATPICKR_JS = 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js';
+
+          // Attempt to load both resources. If successful, initialize the picker.
+          Promise.all([loadCSS(FLATPICKR_CSS), loadScript(FLATPICKR_JS)])
+            .then(function () {
+              try {
+                // initialize flatpickr on the element. Keep allowInput so users
+                // can still type a date in the fallback format; dateFormat matches YYYY-MM-DD.
+                var opts = { dateFormat: 'Y-m-d', allowInput: true };
+                if (el.value) opts.defaultDate = el.value;
+                if (window.flatpickr) {
+                  window.flatpickr(el, opts);
+                } else {
+                  // Unexpected: script loaded but flatpickr not available.
+                  applyTextFallback(el);
+                }
+              } catch (e) {
+                applyTextFallback(el);
+              }
+            })
+            .catch(function () {
+              // Loading failed (offline, blocked CDN, etc.) — use text fallback.
+              applyTextFallback(el);
+            });
+
+          // The original simple fallback to typed YYYY-MM-DD input.
+          function applyTextFallback(el) {
+            try {
+              el.type = 'text';
+            } catch (e) {
+              var clone = el.cloneNode(true);
+              clone.type = 'text';
+              el.parentNode.replaceChild(clone, el);
+              el = clone;
+            }
+
+            el.placeholder = el.placeholder || 'YYYY-MM-DD';
+            el.pattern = el.pattern || '[0-9]{4}-[0-9]{2}-[0-9]{2}';
+            el.title = el.title || 'Enter date as YYYY-MM-DD';
+            el.setAttribute('inputmode', 'numeric');
+
+            var hint = document.createElement('small');
+            hint.textContent = 'If your browser does not show a date picker, enter the date as YYYY-MM-DD.';
+            el.parentNode.insertBefore(hint, el.nextSibling);
+
+            var form = el.form;
+            if (form) {
+              form.addEventListener('submit', function (ev) {
+                var v = el.value && el.value.trim();
+                if (v && !/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(v)) {
+                  ev.preventDefault();
+                  el.focus();
+                  try {
+                    window.dispatchEvent(new CustomEvent('iv-date-invalid', { detail: { el: el } }));
+                  } catch (e) {}
+                  alert('Please enter the date in YYYY-MM-DD format.');
+                }
+              });
+            }
+          }
+        }
+      })();
+    </script>
     <script src="scripts/introduction.js" defer></script>
   </body>
 </html>
