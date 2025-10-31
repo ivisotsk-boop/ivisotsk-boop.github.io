@@ -3,83 +3,6 @@
   const qs = (sel, root = document) => root.querySelector(sel);
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  function init() {
-    const form = byId("intro-form");
-    if (!form) return;
-
-    // Prevent default submit
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      renderResults();
-    });
-
-    // Reset to default values
-    form.addEventListener("reset", () => {
-      // Allow default reset, then ensure dynamic sections reset
-      setTimeout(() => {
-        const coursesContainer = byId("courses-container");
-        coursesContainer.innerHTML = "";
-      }, 0);
-    });
-
-    // Clear all inputs
-    const clearBtn = byId("clear");
-    if (clearBtn)
-      clearBtn.addEventListener("click", () => {
-        qsa("input, textarea", form).forEach((el) => {
-          if (el.type === "file") {
-            el.value = "";
-          } else {
-            el.value = "";
-          }
-        });
-        // Keep dynamic courses but clear their fields
-        qsa(".course-row input", form).forEach((el) => (el.value = ""));
-      });
-
-    // Add course button
-    const addCourseBtn = byId("add-course");
-    if (addCourseBtn)
-      addCourseBtn.addEventListener("click", () => addCourseRow());
-  }
-
-  let courseRowIdCounter = 0;
-
-  function addCourseRow(prefill = {}) {
-    const container = byId("courses-container");
-    const row = document.createElement("div");
-    row.className = "course-row";
-    const id = ++courseRowIdCounter;
-    row.innerHTML = `
-      <label for="courseDept_${id}">Dept (e.g., ITIS)</label>
-      <input id="courseDept_${id}" name="courseDept[]" type="text" placeholder="Dept (e.g., ITIS)" value="${
-      prefill.dept || ""
-    }">
-      <label for="courseNum_${id}">Number (e.g., 3135)</label>
-      <input id="courseNum_${id}" name="courseNum[]" type="text" placeholder="Number (e.g., 3135)" value="${
-      prefill.num || ""
-    }">
-      <label for="courseName_${id}">Course Name</label>
-      <input id="courseName_${id}" name="courseName[]" type="text" placeholder="Course Name" value="${
-      prefill.name || ""
-    }">
-      <label for="courseReason_${id}">Reason</label>
-      <input id="courseReason_${id}" name="courseReason[]" type="text" placeholder="Reason" value="${
-      prefill.reason || ""
-    }">
-      <button type="button" class="delete-course" aria-label="Delete course">✕</button>
-    `;
-    container.appendChild(row);
-
-    qs(".delete-course", row).addEventListener("click", () => {
-      row.remove();
-    });
-  }
-
   function gatherLinks(form) {
     const links = [];
     for (let i = 1; i <= 5; i++) {
@@ -151,7 +74,7 @@
         dept,
         num: courseNums[idx],
         name: courseNames[idx],
-        reason: courseReasons[idx],
+        reason: courseReasons[idx]
       }))
       .filter((c) => c.dept || c.num || c.name || c.reason);
 
@@ -242,6 +165,83 @@
         if (instructionH3) instructionH3.hidden = false; // Show instruction H3 again when resetting
       });
     }
+  }
+
+  let courseRowIdCounter = 0;
+
+  function addCourseRow(prefill = {}) {
+    const container = byId("courses-container");
+    const row = document.createElement("div");
+    row.className = "course-row";
+    const id = ++courseRowIdCounter;
+    row.innerHTML = `
+      <label for="courseDept_${id}">Dept (e.g., ITIS)</label>
+      <input id="courseDept_${id}" name="courseDept[]" type="text" placeholder="Dept (e.g., ITIS)" value="${
+      prefill.dept || ""
+    }">
+      <label for="courseNum_${id}">Number (e.g., 3135)</label>
+      <input id="courseNum_${id}" name="courseNum[]" type="text" placeholder="Number (e.g., 3135)" value="${
+      prefill.num || ""
+    }">
+      <label for="courseName_${id}">Course Name</label>
+      <input id="courseName_${id}" name="courseName[]" type="text" placeholder="Course Name" value="${
+      prefill.name || ""
+    }">
+      <label for="courseReason_${id}">Reason</label>
+      <input id="courseReason_${id}" name="courseReason[]" type="text" placeholder="Reason" value="${
+      prefill.reason || ""
+    }">
+      <button type="button" class="delete-course" aria-label="Delete course">✕</button>
+    `;
+    container.appendChild(row);
+
+    qs(".delete-course", row).addEventListener("click", () => {
+      row.remove();
+    });
+  }
+
+  function init() {
+    const form = byId("intro-form");
+    if (!form) return;
+
+    // Prevent default submit
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      renderResults();
+    });
+
+    // Reset to default values
+    form.addEventListener("reset", () => {
+      // Allow default reset, then ensure dynamic sections reset
+      setTimeout(() => {
+        const coursesContainer = byId("courses-container");
+        coursesContainer.innerHTML = "";
+      }, 0);
+    });
+
+    // Clear all inputs
+    const clearBtn = byId("clear");
+    if (clearBtn)
+      clearBtn.addEventListener("click", () => {
+        qsa("input, textarea", form).forEach((el) => {
+          if (el.type === "file") {
+            el.value = "";
+          } else {
+            el.value = "";
+          }
+        });
+        // Keep dynamic courses but clear their fields
+        qsa(".course-row input", form).forEach((el) => (el.value = ""));
+      });
+
+    // Add course button
+    const addCourseBtn = byId("add-course");
+    if (addCourseBtn)
+      addCourseBtn.addEventListener("click", () => addCourseRow());
   }
 
   document.addEventListener("DOMContentLoaded", init);

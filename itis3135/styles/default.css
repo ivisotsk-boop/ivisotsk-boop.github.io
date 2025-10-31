@@ -79,12 +79,6 @@ footer {
   header {
     margin: 16px;
   }
-  h1 {
-    font-size: 1.8em;
-  }
-  h2 {
-    font-size: 1.3em;
-  }
   p,
   li {
     font-size: 15px;
@@ -129,12 +123,6 @@ footer {
   header {
     margin: 20px;
   }
-  h1 {
-    font-size: 2.2em;
-  }
-  h2 {
-    font-size: 1.5em;
-  }
   p,
   li {
     font-size: 16px;
@@ -168,12 +156,7 @@ footer {
     width: 90%;
     max-width: 1200px;
   }
-  h1 {
-    font-size: 2.5em;
-  }
-  h2 {
-    font-size: 1.7em;
-  }
+
   p,
   li {
     font-size: 16px;
