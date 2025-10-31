@@ -39,6 +39,32 @@
 
     const ackStatement = form.elements["ackStatement"].value.trim();
     const ackDate = form.elements["ackDate"].value;
+    const ackInitialsInput = form.elements["ackInitials"];
+    const ackInitials = ackInitialsInput ? ackInitialsInput.value.trim() : "";
+
+    // Convert date from MM-DD-YYYY to M/D/YYYY format
+    function formatDate(dateStr) {
+      if (!dateStr) return "";
+      const parts = dateStr.split("-");
+      if (parts.length === 3) {
+        const month = parseInt(parts[0], 10);
+        const day = parseInt(parts[1], 10);
+        const year = parts[2];
+        return `${month}/${day}/${year}`;
+      }
+      return dateStr;
+    }
+
+    // Generate initials from name (first letter of first name and last name)
+    function getInitials(firstName, lastName) {
+      const first = firstName && firstName.length > 0 ? firstName[0].toUpperCase() : "";
+      const last = lastName && lastName.length > 0 ? lastName[0].toUpperCase() : "";
+      return first + last;
+    }
+
+    const formattedDate = formatDate(ackDate);
+    // Use user-provided initials if available, otherwise auto-generate from name
+    const initials = ackInitials || getInitials(firstName, lastName);
 
     const mascotAdj = form.elements["mascotAdj"].value.trim();
     const mascotAnimal = form.elements["mascotAnimal"].value.trim();
@@ -138,7 +164,7 @@
       ${coursesHtml}
       ${quoteHtml}
       ${linksHtml}
-      <p><strong>Acknowledgment:</strong> ${ackStatement} (${ackDate})</p>
+      <p>${ackStatement} <u>${formattedDate}</u> <u>${initials}</u></p>
       <p><a href="#" id="reset-link">Reset and fill again</a></p>
     `;
 
