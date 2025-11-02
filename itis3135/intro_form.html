@@ -9,6 +9,12 @@
     ></script>
     <title>Introduction Form</title>
     <link rel="stylesheet" href="styles/default.css" />
+    <!-- Highlight.js for syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <style>
       /* Scoped vars for this page only */
       #intro-form {
@@ -91,6 +97,63 @@
       #intro-form input:invalid:focus,
       #intro-form textarea:invalid:focus {
         box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+      }
+
+      /* HTML output code block styling */
+      #html-output {
+        margin-top: 2rem;
+      }
+
+      #html-output section {
+        background: #1e1e1e;
+        border-radius: var(--radius);
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      #html-output pre {
+        margin: 0;
+        padding: 1rem;
+        background: transparent;
+        overflow-x: auto;
+        user-select: all;
+        -webkit-user-select: all;
+        -moz-user-select: all;
+        -ms-user-select: all;
+        text-align: left;
+      }
+
+      #html-output code {
+        display: block;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        white-space: pre;
+        word-wrap: normal;
+        overflow-wrap: normal;
+        text-align: left;
+        direction: ltr;
+      }
+
+      #html-output pre code {
+        user-select: all;
+        -webkit-user-select: all;
+        -moz-user-select: all;
+        -ms-user-select: all;
+      }
+
+      #html-output p {
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      #html-output a {
+        color: var(--ring-solid);
+        text-decoration: underline;
+      }
+
+      #html-output a:hover {
+        color: #60a5fa;
       }
     </style>
   </head>
@@ -326,6 +389,7 @@ I acknowledge that the information provided is accurate to the best of my knowle
               placeholder="IV"
               maxlength="10"
               title="Enter your initials (e.g., IV)"
+              value="IV"
             />
           </fieldset>
 
@@ -384,10 +448,12 @@ I acknowledge that the information provided is accurate to the best of my knowle
           <button type="submit" form="intro-form">Submit</button>
           <button type="reset" form="intro-form">Reset</button>
           <button type="button" id="clear">Clear</button>
+          <button type="button" id="generate-html">Generate HTML</button>
         </div>
       </div>
 
       <div id="results" hidden></div>
+      <div id="html-output" hidden></div>
     </main>
 
     <footer>
@@ -432,5 +498,6 @@ I acknowledge that the information provided is accurate to the best of my knowle
       })();
     </script>
     <script src="scripts/introduction.js" defer></script>
+    <script src="scripts/generate_html.js" defer></script>
   </body>
 </html>
