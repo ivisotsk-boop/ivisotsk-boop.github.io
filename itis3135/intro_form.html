@@ -108,14 +108,17 @@
         background: #1e1e1e;
         border-radius: var(--radius);
         padding: 1rem;
-        overflow-x: auto;
+        overflow-x: visible;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
 
       #html-output pre {
         margin: 0;
         padding: 1rem;
         background: transparent;
-        overflow-x: auto;
+        overflow-x: visible;
+        overflow-wrap: break-word;
         user-select: all;
         -webkit-user-select: all;
         -moz-user-select: all;
@@ -128,9 +131,9 @@
         font-family: "Courier New", Courier, monospace;
         font-size: 0.875rem;
         line-height: 1.5;
-        white-space: pre;
-        word-wrap: normal;
-        overflow-wrap: normal;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
         text-align: left;
         direction: ltr;
       }

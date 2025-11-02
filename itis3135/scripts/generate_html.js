@@ -124,19 +124,33 @@
         }
       }
 
-      // For long text content, try to wrap at word boundaries
-      if (!content.startsWith("<")) {
-        const words = content.split(/(\s+)/);
+      // For long text content (may contain HTML tags), try to wrap at word boundaries
+      // Check if this is text content (doesn't start with <, or contains text mixed with tags)
+      const isTextContent = !content.startsWith("<") || 
+                           (content.includes(">") && content.indexOf(">") < content.length - 1 && 
+                            !content.match(/^<[^>]*>$/)); // Not a standalone tag
+      
+      if (isTextContent) {
+        // Split into tokens: HTML tags and text words (preserving spaces)
+        // Match HTML tags or sequences of non-whitespace/non-tag characters
+        const tokens = content.match(/<[^>]*>|\S+|\s+/g) || [];
         let currentLine = leadingSpaces;
         
-        for (let word of words) {
-          if ((currentLine + word).length <= maxWidth) {
-            currentLine += word;
+        for (let token of tokens) {
+          const testLine = currentLine + token;
+          if (testLine.length <= maxWidth) {
+            currentLine = testLine;
           } else {
+            // If current line has content, push it
             if (currentLine.trim()) {
               wrapped.push(currentLine);
             }
-            currentLine = leadingSpaces + word;
+            // Start new line with same indentation (skip leading spaces from token if it's whitespace)
+            if (token.trim()) {
+              currentLine = leadingSpaces + token;
+            } else {
+              currentLine = leadingSpaces;
+            }
           }
         }
         if (currentLine.trim()) {
@@ -339,7 +353,9 @@
     }
 
     // Acknowledgment
-    mainContent += `      <p class="paragraph ackSstatement">${escapeHtml(ackStatement)} <span style="text-decoration: underline;">${escapeHtml(formattedDate)} ${escapeHtml(initials)}</span></p>\n`;
+    mainContent += `      <p class="paragraph ackSstatement">\n`;
+    mainContent += `        ${escapeHtml(ackStatement)} <span style="text-decoration: underline;">${escapeHtml(formattedDate)} ${escapeHtml(initials)}</span>\n`;
+    mainContent += `      </p>\n`;
 
     // Build complete HTML document with proper indentation
     let fullHtml = `<!DOCTYPE html>
