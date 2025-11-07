@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Project Overview - Ben’s Remodel</title>
+  <link rel="stylesheet" href="../styles/default.css">
+  <style>
+    body {
+        text-align: left;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    h1, h2 {
+        text-align: center;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .column {
+        flex: 0 0 50%;
+    }
+
+    .column p {
+        
+    }
+
+    .two {
+        display: flex;
+        flex-direction: row;
+    }
+
+    ul {
+        margin-left: -20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div data-include="../components/header.html"></div>
+  </header>
+
+  <main>
+    <div class="container">
+           
+        <section class="column">
+            <h2>Project Overview</h2> 
+            <p>
+                The goal of this project is to build a website for a remodeling company to attract more customers. 
+                The website should have all general information about the work that the company does and anything a 
+                potential client might want to know. Upon visiting the website, users should know what services Ben’s 
+                Remodeling can provide and be more inclined to hire them than other companies.
+            </p>
+            <p>
+                The website will include jobs that have already been completed and some examples of what was done. 
+                It should also include pricing options and contact information for scheduling quotes or answering questions.
+            </p>
+        </section class="column">
+        <section class="column">
+            <h2>Client Information</h2>
+            <ul>
+                <li><strong>Client:</strong> Veniamin Visotsky</li>
+                <li><strong>Business:</strong> Ben’s Remodel</li>
+                <li><strong>Email:</strong> <a href="mailto:veniaminv41@gmail.com">veniaminv41@gmail.com</a></li>
+                <li><strong>Phone:</strong> 980-328-4335</li>
+            </ul>
+        </section>
+    </div>
+    <h2>Page Design</h2>
+    <section class="two">
+      <article>
+        <h3>Home Page</h3>
+        <ul>
+          <li><strong>Purpose:</strong> Welcomes users</li>
+          <li>Simple introduction describing what Ben’s Remodel is</li>
+          <li>Includes pictures of projects</li>
+          <li>May contain a contact form (no validation required)</li>
+          <li>Contains navigation links and a submit form button</li>
+          <li>Form submission may trigger an email (if API available)</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>About Us Page</h3>
+        <ul>
+          <li><strong>Purpose:</strong> General description of the company</li>
+          <li>Describes who Ben’s Remodel is and what they do</li>
+          <li>Content includes paragraphs and pictures</li>
+          <li>No validation or interactive data entry</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Reviews Page</h3>
+        <ul>
+          <li><strong>Purpose:</strong> Leave and view customer reviews</li>
+          <li>Includes form fields for submitting reviews</li>
+          <li>Some validation to reduce fake reviews</li>
+          <li>Buttons: Submit, Clear</li>
+          <li>Data processed upon submission</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Previous Projects Page</h3>
+        <ul>
+          <li><strong>Purpose:</strong> Showcase before and after project examples</li>
+          <li>Content includes pictures and descriptions</li>
+          <li>May include dropdown menus or interactive elements</li>
+          <li>No validation required</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div data-include="../components/footer.html"></div>
+  </footer>
+  <script src="../scripts/HTMLInclude.min.js"></script>
+</body>
+</html>
