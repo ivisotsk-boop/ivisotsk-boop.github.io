@@ -26,6 +26,7 @@ main {
 
 header {
   margin: 20px 30px 30px 30px;
+  text-align: center;
 }
 
 h1 {
@@ -66,6 +67,7 @@ footer {
   font-size: 14px;
   color: #acc9ff;
   margin: 30px 30px 20px 30px;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
