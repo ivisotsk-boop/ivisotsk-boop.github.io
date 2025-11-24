@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Time Counter</title>
+    <style>
+      .limit-reached {
+        color: red !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <textarea id="text-input"></textarea>
+    <p class="char-count" id="char-count">Character Count: 0/50</p>
+    <script>
+      const textInput = document.getElementById("text-input");
+      const charCount = document.getElementById("char-count");
+      const maxChars = 50;
+
+      textInput.addEventListener("input", function () {
+        let text = textInput.value;
+
+        // Trim extra characters beyond 50
+        if (text.length > maxChars) {
+          text = text.slice(0, maxChars);
+          textInput.value = text;
+        }
+
+        // Update character count
+        charCount.textContent = `Character Count: ${text.length}/50`;
+
+        // Turn text red at limit, otherwise normal
+        if (text.length === maxChars) {
+          charCount.classList.add("limit-reached");
+          const fifte = document.getElementById("char-count");
+          console.log(fifte.className);
+        } else {
+          charCount.classList.remove("limit-reached");
+        }
+      });
+    </script>
+  </body>
+</html>

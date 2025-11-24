@@ -1,148 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client Project Overview - Ben’s Remodel</title>
-  <link rel="stylesheet" href="../styles/default.css">
-  <style>
-    body {
-        text-align: left;
-        width: 70%;
-        margin: 0 auto;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Project Overview - Ben’s Remodel</title>
+    <link rel="stylesheet" href="../styles/default.css" />
+    <style>
+      main {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        gap: 5px;
+      }
 
-    h1, h2 {
-        text-align: center;
-    }
-    
-    h3 {
-        margin: -15px, auto;
-    }
+      .container.pages {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        align-items: stretch;
+      }
 
-    .container {
+      .container.pages article {
         display: flex;
-        flex-direction: row;
-    }
+        flex-direction: column;
+        height: 100%;
+      }
 
-    .column {
-        flex: 0 0 50%;
-    }
+      .container.pages article .content {
+        flex: 1;
+      }
 
-    .content {
-        background-color:  #69655f38;
-        padding: 15px;
+      .container.overview {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        align-items: start;
+      }
+
+      .column {
+        grid-column: span 2;
+      }
+
+      .content {
+        background-color: #454a5060;
         border-radius: 9px;
-        justify-content: center;
-        margin: 0 5px;
-    }
+        margin: 0;
+        text-align: left;
+        padding: 15px;
+      }
 
-    .two {
-        display: flex;
-        flex-direction: row;
-    }
+      @media (max-width: 768px) {
+        .container.pages {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
 
-    ul {
-        margin-left: -20px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div data-include="../components/header.html"></div>
-  </header>
+      @media (max-width: 480px) {
+        .container.pages {
+          grid-template-columns: 1fr;
+        }
 
-  <main>
+        .container.overview {
+          grid-template-columns: 1fr;
+        }
 
-    <h2>Page Design</h2>
-    <section class="two">
-      <article>
-        <h3>Home Page</h3>
-        <div class="content">
+        .column {
+          grid-column: span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div data-include="../components/header.html"></div>
+    </header>
+
+    <main>
+      <h2>Page Design</h2>
+      <div class="container pages">
+        <article>
+          <h3>Home Page</h3>
+          <div class="content">
             <ul>
-                <li><strong>Purpose:</strong> Welcomes users</li>
-                <li>Simple introduction describing what Ben’s Remodel is</li>
-                <li>Includes pictures of projects</li>
-                <li>May contain a contact form (no validation required)</li>
-                <li>Contains navigation links and a submit form button</li>
-                <li>Form submission may trigger an email (if API available)</li>
+              <li><strong>Purpose:</strong> Welcomes users</li>
+              <li>Simple introduction describing what Ben’s Remodel is</li>
+              <li>Includes pictures of projects</li>
+              <li>May contain a contact form (no validation required)</li>
+              <li>Contains navigation links and a submit form button</li>
+              <li>Form submission may trigger an email (if API available)</li>
             </ul>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <article>
-        <h3>About Us Page</h3>
-        <div class="content">
-          <ul>
-              <li><strong>Purpose:</strong> General description of the company</li>
+        <article>
+          <h3>About Us Page</h3>
+          <div class="content">
+            <ul>
+              <li>
+                <strong>Purpose:</strong> General description of the company
+              </li>
               <li>Describes who Ben’s Remodel is and what they do</li>
               <li>Content includes paragraphs and pictures</li>
               <li>No validation or interactive data entry</li>
-          </ul>
-        </div>
-      </article>
-
-      <article>
-        <h3>Reviews Page</h3>
-        <div class="content">
-            <ul>
-                <li><strong>Purpose:</strong> Leave and view customer reviews</li>
-                <li>Includes form fields for submitting reviews</li>
-                <li>Some validation to reduce fake reviews</li>
-                <li>Buttons: Submit, Clear</li>
-                <li>Data processed upon submission</li>
             </ul>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <article>
-        <h3>Previous Projects Page</h3>
-        <div class="content">
+        <article>
+          <h3>Reviews Page</h3>
+          <div class="content">
             <ul>
-                <li><strong>Purpose:</strong> Showcase before and after project examples</li>
-                <li>Content includes pictures and descriptions</li>
-                <li>May include dropdown menus or interactive elements</li>
-                <li>No validation required</li>
+              <li><strong>Purpose:</strong> Leave and view customer reviews</li>
+              <li>Includes form fields for submitting reviews</li>
+              <li>Some validation to reduce fake reviews</li>
+              <li>Buttons: Submit, Clear</li>
+              <li>Data processed upon submission</li>
             </ul>
-        </div>
-      </article>
-    </section>
+          </div>
+        </article>
 
-    <div class="container">
-           
+        <article>
+          <h3>Previous Projects Page</h3>
+          <div class="content">
+            <ul>
+              <li>
+                <strong>Purpose:</strong> Showcase before and after project
+                examples
+              </li>
+              <li>Content includes pictures and descriptions</li>
+              <li>May include dropdown menus or interactive elements</li>
+              <li>No validation required</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="container overview">
         <section class="column">
-            <h2>Project Overview</h2> 
+          <h2>Project Overview</h2>
+          <article>
             <div class="content">
-                <p>
-                    The goal of this project is to build a website for a remodeling company to attract more customers. 
-                    The website should have all general information about the work that the company does and anything a 
-                    potential client might want to know. Upon visiting the website, users should know what services Ben’s 
-                    Remodeling can provide and be more inclined to hire them than other companies.
-                </p>
-                <p>
-                    The website will include jobs that have already been completed and some examples of what was done. 
-                    It should also include pricing options and contact information for scheduling quotes or answering questions.
-                </p>
+              <p>
+                The goal of this project is to build a website for a remodeling
+                company to attract more customers. The website should have all
+                general information about the work that the company does and
+                anything a potential client might want to know. Upon visiting
+                the website, users should know what services Ben’s Remodeling
+                can provide and be more inclined to hire them than other
+                companies.
+              </p>
+              <p>
+                The website will include jobs that have already been completed
+                and some examples of what was done. It should also include
+                pricing options and contact information for scheduling quotes or
+                answering questions.
+              </p>
             </div>
-        </section class="column">
-        <section class="column">
-            <h2>Client Information</h2>
-            <div class="content">
-                <ul>
-                    <li><strong>Client:</strong> Veniamin Visotsky</li>
-                    <li><strong>Business:</strong> Ben’s Remodel</li>
-                    <li><strong>Email:</strong> <a href="mailto:veniaminv41@gmail.com">veniaminv41@gmail.com</a></li>
-                    <li><strong>Phone:</strong> 980-328-4335</li>
-                </ul>
-            </div>
+          </article>
         </section>
-    </div>
-    
-  </main>
+        <section class="column">
+          <h2>Client Information</h2>
+          <article>
+            <div class="content">
+              <ul>
+                <li><strong>Client:</strong> Veniamin Visotsky</li>
+                <li><strong>Business:</strong> Ben’s Remodel</li>
+                <li>
+                  <strong>Email:</strong>
+                  <a href="mailto:veniaminv41@gmail.com"
+                    >veniaminv41@gmail.com</a
+                  >
+                </li>
+                <li><strong>Phone:</strong> 980-328-4335</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
 
-  <footer>
-    <div data-include="../components/footer.html"></div>
-  </footer>
-  <script src="../scripts/HTMLInclude.min.js"></script>
-</body>
+    <footer>
+      <div data-include="../components/footer.html"></div>
+    </footer>
+    <script src="../scripts/HTMLInclude.min.js"></script>
+  </body>
 </html>

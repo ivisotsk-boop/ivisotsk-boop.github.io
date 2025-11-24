@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Ben's Remodel</title>
+    <link rel="stylesheet" href="styles/default.css" />
+  </head>
+  <body>
+    <header>
+      <div data-include="components/header.html"></div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h2 class="hero-title">Transform Your Space Into Your Dream Home</h2>
+          <p class="hero-subtitle">
+            Expert remodeling services with attention to detail and quality
+            craftsmanship
+          </p>
+          <a href="services.html" class="cta-primary">View Our Services</a>
+        </div>
+      </section>
+
+      <!-- Services Overview -->
+      <section class="services-section">
+        <h2>What We Do</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Kitchen Remodeling</h3>
+            <p>
+              Complete kitchen transformations that combine functionality with
+              modern design
+            </p>
+          </div>
+          <div class="service-card">
+            <h3>Bathroom Renovations</h3>
+            <p>Luxurious bathroom upgrades tailored to your style and needs</p>
+          </div>
+          <div class="service-card">
+            <h3>Home Additions</h3>
+            <p>
+              Expand your living space with seamless additions that blend
+              perfectly with your existing home
+            </p>
+          </div>
+          <div class="service-card">
+            <h3>Custom Projects</h3>
+            <p>
+              Specialized remodeling solutions for unique spaces and
+              requirements
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section class="projects-section">
+        <h2>Our Recent Work</h2>
+        <p class="section-intro">
+          See how we've transformed homes with our expert craftsmanship
+        </p>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image-placeholder">
+              <span>Project Image</span>
+            </div>
+            <div class="project-info">
+              <h3>Modern Kitchen Transformation</h3>
+              <p>
+                Complete kitchen renovation featuring custom cabinetry and
+                premium finishes
+              </p>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-placeholder">
+              <span>Project Image</span>
+            </div>
+            <div class="project-info">
+              <h3>Luxury Bathroom Remodel</h3>
+              <p>
+                Spa-inspired bathroom design with high-end fixtures and elegant
+                tile work
+              </p>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-placeholder">
+              <span>Project Image</span>
+            </div>
+            <div class="project-info">
+              <h3>Whole Home Renovation</h3>
+              <p>
+                Extensive home makeover updating multiple rooms with cohesive
+                design
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="projects-cta">
+          <a href="projects.html" class="cta-secondary">View All Projects</a>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section class="features-section">
+        <h2>Why Choose Ben's Remodel</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <h3>Experienced Team</h3>
+            <p>Years of expertise in residential remodeling and construction</p>
+          </div>
+          <div class="feature-item">
+            <h3>Quality Materials</h3>
+            <p>We use only the finest materials and trusted suppliers</p>
+          </div>
+          <div class="feature-item">
+            <h3>Timely Completion</h3>
+            <p>Projects completed on schedule with minimal disruption</p>
+          </div>
+          <div class="feature-item">
+            <h3>Customer Satisfaction</h3>
+            <p>Your vision is our priority from start to finish</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="contact-section">
+        <h2>Get Your Free Quote</h2>
+        <p class="section-intro">
+          Ready to start your remodeling project? Contact us today for a
+          consultation
+        </p>
+        <form class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="project-type">Project Type</label>
+            <select id="project-type" name="project-type">
+              <option value="">Select a project type</option>
+              <option value="kitchen">Kitchen Remodeling</option>
+              <option value="bathroom">Bathroom Renovation</option>
+              <option value="whole-home">Whole Home Remodel</option>
+              <option value="custom">Custom Project</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Details</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+          </div>
+          <button type="submit" class="cta-primary">Request Quote</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="scripts/HTMLInclude.min.js"></script>
+  </body>
+</html>
