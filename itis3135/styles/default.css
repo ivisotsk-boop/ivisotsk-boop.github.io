@@ -17,8 +17,9 @@ main {
 }
 
 .top-nav {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
   gap: 20px;
   justify-content: center;
   margin: 20px;
